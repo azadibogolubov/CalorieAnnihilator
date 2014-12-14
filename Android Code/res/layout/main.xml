@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+        >
+    <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Welcome to Calorie Annihilator!"
+            android:textSize="24dp"
+            />
+    <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Please choose an option:"
+            android:textSize="24dp"
+            />
+    <Button
+            android:layout_marginTop="20dp"
+            android:id="@+id/avoidanceBtn"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Avoidance Mode"
+            android:textSize="24dp"
+            />
+    <Button
+            android:id="@+id/bingeBtn"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Binge Mode"
+            android:textSize="24dp"
+            />
+    <TextView
+            android:layout_marginTop="250dp"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Calories Avoided: 15801"
+            android:textSize="24dp"
+            />
+    <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Lbs of sugar avoided: 5.8"
+            android:textSize="24dp"
+            />
+</LinearLayout>
+

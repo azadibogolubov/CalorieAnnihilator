@@ -1,6 +1,37 @@
 import java.util.List;
 import java.util.ArrayList;
 
+class Client
+{
+	private String name;
+	private int caloriesAvoidedToDate;
+
+	public Client(String clientName)
+	{
+		name = clientName;
+	}
+
+	public String getName()
+	{
+		return name;
+	}
+
+	public void setName(String newName)
+	{
+		name = newName;
+	}
+
+	public int getTotalCalories()
+	{
+		return caloriesAvoidedToDate;
+	}
+
+	public void increaseTotalCaloriesSaved(int value)
+	{
+		caloriesAvoidedToDate += value;
+	}
+}
+
 class Food
 {
 	/*
@@ -10,14 +41,16 @@ class Food
          * 3) Serving size (in grams).
          */
 	private String name;
-	private int numCaloriesPerServing;
-	private int numGramsPerServing;
+	private String category;
+	private int caloriesPerServing;
+	private int gramsPerServing;
 
-	public Food(String foodName, int numCalories, int numGrams)
+	public Food(String foodName, String foodCategory,  int numCalories, int numGrams)
 	{
 		name = foodName;
-		numCaloriesPerServing = numCalories;
-		numGramsPerServing = numGrams;
+		category = foodCategory;
+		caloriesPerServing = numCalories;
+		gramsPerServing = numGrams;
 	}
 
 	public String getName()
@@ -29,16 +62,26 @@ class Food
 	{
 		name = value;
 	}
+
+	public int getCaloriesPerServing()
+	{
+		return caloriesPerServing;
+	}
+	
+	public int getGramsPerServing()
+	{
+		return gramsPerServing;
+	}
 }
 
 class AccessorFunctions
 {
-	private int totalCalories;
+	private Client newClient;
 	private List<Food> foodsList;
 
 	public AccessorFunctions()
 	{
-		totalCalories = 0;
+		newClient = new Client("Azadi");
 		foodsList = new ArrayList<Food>();
 	}
 
@@ -50,7 +93,7 @@ class AccessorFunctions
 		 * Therefore, taking the following quotient will yield the 
 		 * number of pounds of sugar avoided to date.
 		 */
-		return totalCalories / (454 * 4);	
+		return (newClient.getTotalCalories() / (454 * 4));	
 	}
 
 	public float getKilogramsOfSugarSaved()
@@ -67,7 +110,7 @@ class AccessorFunctions
 		/* Instead of focusing on calories taken in,
 		 * this app will focus on calories averted. 
 		 */
-		return totalCalories;
+		return newClient.getTotalCalories();
 	}
 
 	public Food findFood(String foodName)
@@ -75,12 +118,12 @@ class AccessorFunctions
 		for (Food f: foodsList)
 			if (f.getName().equals(foodName))
 				return f;
-		return new Food("Food not found", 0, 0);
+		return new Food("Food not found", "None", 0, 0);
 	}
 	
-	public void addFood(String foodName, int numCalories, int numGrams)
+	public void addFood(String foodName, String category, int numCalories, int numGrams)
 	{
-		foodsList.add(new Food(foodName, numCalories, numGrams));
+		foodsList.add(new Food(foodName, category, numCalories, numGrams));
 	}
 	
 	public void listAllFoods()
@@ -95,8 +138,8 @@ public class Prototype
 	public static void main(String[] args)
 	{
 		AccessorFunctions instance = new AccessorFunctions();
-		instance.addFood("Pizza", 300, 50);
-		instance.addFood("Mountain Dew", 190, 336);
+		instance.addFood("Pizza", "Meal", 300, 50);
+		instance.addFood("Mountain Dew", "Beverage", 190, 336);
 		instance.listAllFoods();	
 	}
 }
