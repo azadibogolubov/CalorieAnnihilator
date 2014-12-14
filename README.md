@@ -8,8 +8,10 @@ and will see instantaneously how many calories they would be taking in, as well 
 are contained.
 
 There are two modes, Avoidance Mode and Binge Mode. 
+
 1) Avoidance Mode allows the user to enter food they have avoided to see the rewards and have the calorie 
 and sugar count be added to their lifetime achievements. 
+
 2) Binge Mode is for when the user later decided to eat that food anyways, and will deduct from lifetime 
 achievements.
 
