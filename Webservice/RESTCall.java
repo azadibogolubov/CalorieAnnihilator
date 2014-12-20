@@ -36,13 +36,22 @@ public class RESTCall
     {
       String s = issueGetRequest("http://api.data.gov/usda/ndb/nutrients/?format=json&api_key=3hVnhFvj1VAagD29p9Q5b5MeYenARhmAvyX2suCf&nutrients=208&max=1");
       Object result = parser.parse(s);
-      JSONObject jsonObj = new JSONObject((JSONObject) result);
-      JSONObject report = (JSONObject)jsonObj.get("report");
-      JSONArray reportArr = (JSONArray) report.get("foods");
-      JSONObject foods = (JSONObject) reportArr.get(0);
-      JSONArray nutrients = (JSONArray) foods.get("nutrients");
-      JSONObject calories = (JSONObject) nutrients.get(0);
-      System.out.println(calories.get("value") + " calories");
+
+      String numCalories = 
+        (String) ((JSONObject) ((JSONArray) ((JSONObject) ((JSONArray) ((JSONObject) ((JSONObject) result)
+          .get("report")).get("foods")).get(0)).get("nutrients")).get(0)).get("value");      
+
+      Object servingSize = 
+        ((JSONObject) ((JSONArray) ((JSONObject) ((JSONObject) result)
+          .get("report")).get("foods")).get(0)).get("measure");
+
+      Object foodName = 
+        ((JSONObject) ((JSONArray) ((JSONObject) ((JSONObject) result)
+          .get("report")).get("foods")).get(0)).get("name");
+
+      System.out.println("Name: " + foodName);
+      System.out.println("Calories: " + numCalories);
+      System.out.println("Serving Size: " + servingSize);
     }
     catch (ParseException e)
     {
