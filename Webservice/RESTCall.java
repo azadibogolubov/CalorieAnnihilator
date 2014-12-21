@@ -29,25 +29,44 @@ public class RESTCall
     return sb.toString();
   }
 
+  public static Object getFoodName(Object input)
+  {
+      Object reportData = ((JSONObject) input).get("report");
+      Object foodsData = ((JSONObject) reportData).get("foods");
+      Object foodsArray = ((JSONArray) foodsData).get(0);
+      Object foodName = ((JSONObject) foodsArray).get("name");
+      return foodName;
+  }
+
+  public static Object getCalorieCount(Object input)
+  {
+      Object reportData = ((JSONObject) input).get("report");
+      Object foodsData = ((JSONObject) reportData).get("foods");
+      Object foodsArray = ((JSONArray) foodsData).get(0);
+      Object nutrientData = ((JSONObject) foodsArray).get("nutrients");
+      Object nutrientArray = ((JSONArray) nutrientData).get(0);
+      Object calorieCount = ((JSONObject) nutrientArray).get("value");
+      return calorieCount;
+  }
+
+  public static Object getServingSize(Object input)
+  {
+      Object reportData = ((JSONObject) input).get("report");
+      Object foodsData = ((JSONObject) reportData).get("foods");
+      Object foodsArray = ((JSONArray) foodsData).get(0);
+      Object servingSize = ((JSONObject) foodsArray).get("measure");
+      return servingSize;
+  }
+
 	public static void main(String[] args)
 	{
     JSONParser parser = new JSONParser();
     try 
     {
       String s = issueGetRequest("http://api.data.gov/usda/ndb/nutrients/?format=json&api_key=3hVnhFvj1VAagD29p9Q5b5MeYenARhmAvyX2suCf&nutrients=208&max=1");
-      Object result = parser.parse(s);
-
-      String numCalories = 
-        (String) ((JSONObject) ((JSONArray) ((JSONObject) ((JSONArray) ((JSONObject) ((JSONObject) result)
-          .get("report")).get("foods")).get(0)).get("nutrients")).get(0)).get("value");      
-
-      Object servingSize = 
-        ((JSONObject) ((JSONArray) ((JSONObject) ((JSONObject) result)
-          .get("report")).get("foods")).get(0)).get("measure");
-
-      Object foodName = 
-        ((JSONObject) ((JSONArray) ((JSONObject) ((JSONObject) result)
-          .get("report")).get("foods")).get(0)).get("name");
+      Object servingSize = getServingSize(parser.parse(s));
+      Object numCalories = getCalorieCount(parser.parse(s));
+      Object foodName = getFoodName(parser.parse(s));
 
       System.out.println("Name: " + foodName);
       System.out.println("Calories: " + numCalories);
