@@ -64,9 +64,10 @@ public class RESTCall
     try 
     {
       String s = issueGetRequest("http://api.data.gov/usda/ndb/nutrients/?format=json&api_key=3hVnhFvj1VAagD29p9Q5b5MeYenARhmAvyX2suCf&nutrients=208&max=1");
-      Object servingSize = getServingSize(parser.parse(s));
-      Object numCalories = getCalorieCount(parser.parse(s));
-      Object foodName = getFoodName(parser.parse(s));
+      Object parsedData = parser.parse(s);
+      Object servingSize = getServingSize(parsedData);
+      Object numCalories = getCalorieCount(parsedData);
+      Object foodName = getFoodName(parsedData);
 
       System.out.println("Name: " + foodName);
       System.out.println("Calories: " + numCalories);
