@@ -15,7 +15,4 @@ and sugar count be added to their lifetime achievements.
 2) Binge Mode is for when the user later decided to eat that food anyways, and will deduct from lifetime 
 achievements.
 
-The system will use a SQLite database stored on the Android device to keep track of a user's progress, 
-and will grab food data from an online datastore. The current intention is to use a web service to query 
-the datastore, sanitize the data, and prepare it for reading into the Android device, so that there are 
-not issues with latency in gathering data.
+The USDA Nutrient Database API will be used to obtain food nutrient data. The data is returned in a JSON format and sanitized to be human readable. This functionality may well be relegated to a Web Service hosted in the cloud.
