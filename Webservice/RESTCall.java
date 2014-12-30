@@ -32,7 +32,6 @@ public class RESTCall
   public static Object getFoodName(Object input, int num)
   {
       Object reportData = ((JSONObject) input).get("list");
-      Object max = ((JSONObject) reportData).get("end");
       Object foodsData = ((JSONObject) reportData).get("item");
       Object foodsArray = ((JSONArray) foodsData).get(num);
       Object foodName = ((JSONObject) foodsArray).get("name");
@@ -41,14 +40,13 @@ public class RESTCall
 
   public static Object getCalorieCount(Object input)
   {
-      /*Object reportData = ((JSONObject) input).get("report");
-      Object foodsData = ((JSONObject) reportData).get("foods");
+      Object reportData = ((JSONObject) input).get("list");
+      Object foodsData = ((JSONObject) reportData).get("item");
       Object foodsArray = ((JSONArray) foodsData).get(0);
       Object nutrientData = ((JSONObject) foodsArray).get("nutrients");
       Object nutrientArray = ((JSONArray) nutrientData).get(0);
       Object calorieCount = ((JSONObject) nutrientArray).get("value");
-      return calorieCount;*/
-      return 0;
+      return calorieCount;
   }
 
   public static Object getServingSize(Object input)
