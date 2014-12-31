@@ -29,52 +29,61 @@ public class RESTCall
     return sb.toString();
   }
 
-  public static Object getFoodName(Object input, int num)
-  {
-      Object reportData = ((JSONObject) input).get("list");
-      Object foodsData = ((JSONObject) reportData).get("item");
-      Object foodsArray = ((JSONArray) foodsData).get(num);
-      Object foodName = ((JSONObject) foodsArray).get("name");
-      return foodName;
-  }
-
-  public static Object getCalorieCount(Object input)
-  {
-      Object reportData = ((JSONObject) input).get("list");
-      Object foodsData = ((JSONObject) reportData).get("item");
-      Object foodsArray = ((JSONArray) foodsData).get(0);
-      Object nutrientData = ((JSONObject) foodsArray).get("nutrients");
-      Object nutrientArray = ((JSONArray) nutrientData).get(0);
-      Object calorieCount = ((JSONObject) nutrientArray).get("value");
-      return calorieCount;
-  }
-
   public static Object getServingSize(Object input)
   {
-      /*Object reportData = ((JSONObject) input).get("report");
+      Object reportData = ((JSONObject) input).get("report");
       Object foodsData = ((JSONObject) reportData).get("foods");
       Object foodsArray = ((JSONArray) foodsData).get(0);
       Object servingSize = ((JSONObject) foodsArray).get("measure");
-      return servingSize;*/
-      return 0;
+      return servingSize;
   }
 
-	public static void main(String[] args)
-	{
+  public static Object getCalories(Object input)
+  {
+       Object reportData = ((JSONObject) input).get("report");
+       Object foodsData = ((JSONObject) reportData).get("foods");
+       Object foodsArray = ((JSONArray) foodsData).get(0);
+       Object nutrientsData = ((JSONObject) foodsArray).get("nutrients");
+       Object nutrientsArray = ((JSONArray) nutrientsData).get(0);
+       Object value = ((JSONObject) nutrientsArray).get("value");
+       return value;
+  }
+
+  public static Object getName(Object input)
+  {
+       Object listData = ((JSONObject) input).get("list");
+       Object itemData = ((JSONObject) listData).get("item");
+       Object itemArray = ((JSONArray) itemData).get(0);
+       Object name = ((JSONObject) itemArray).get("name");
+       return name;
+  }
+
+  public static Object getNDB(Object input)
+  {
+      Object listData = ((JSONObject) input).get("list");
+      Object itemData = ((JSONObject) listData).get("item");
+      Object itemArray = ((JSONArray) itemData).get(0);
+      Object ndb = ((JSONObject) itemArray).get("ndbno");
+      return ndb;
+  }
+
+  public static void main(String[] args)
+  {
     JSONParser parser = new JSONParser();
     try 
     {
-      String s = issueGetRequest("http://api.data.gov/usda/ndb/search/?format=json&q=cheese&max=25&offset=0&api_key=DEMO_KEY");
+      String name = issueGetRequest("http://api.data.gov/usda/ndb/search/?format=json&q=papa%20johns&max=25&offset=0&api_key=3hVnhFvj1VAagD29p9Q5b5MeYenARhmAvyX2suCf");
+      Object parsedName = parser.parse(name);
+      Object foodName = getName(parsedName);
+      Object ndbno = getNDB(parsedName);
+      System.out.println("Name: " + foodName);
+
+      String s = issueGetRequest("http://api.data.gov/usda/ndb/nutrients/?format=json&api_key=3hVnhFvj1VAagD29p9Q5b5MeYenARhmAvyX2suCf&nutrients=208&ndbno=" + ndbno + "&max=1");
       Object parsedData = parser.parse(s);
-      //Object servingSize = getServingSize(parsedData);
-      //Object numCalories = getCalorieCount(parsedData);
-      for (int i = 0; i < 25; i++)
-      {
-	Object foodName = getFoodName(parsedData, i);
-	System.out.println("Name: " + foodName);
-      }
-      //System.out.println("Calories: " + numCalories);
-      //System.out.println("Serving Size: " + servingSize);
+      Object servingSize = getServingSize(parsedData);
+      Object calories = getCalories(parsedData);
+      System.out.println("SERVING SIZE: " + servingSize);
+      System.out.println("CALORIES: " + calories);
     }
     catch (ParseException e)
     {
@@ -84,5 +93,5 @@ public class RESTCall
     {
         System.out.println("Error during GET request."); 
     }
-	}
+  }
 }
