@@ -9,31 +9,28 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Please enter a food item:"
+            android:text="@string/food"
             android:id="@+id/textView"
             android:layout_gravity="center_horizontal"/>
-    <EditText
-            android:hint="Food name"
-            android:layout_marginTop="10dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#ffffff"
-            android:textColor="#000000"
-            android:id="@+id/editText"
-            android:layout_gravity="center_horizontal"/>
 
-    <Spinner
+    <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/spinner"
-            android:layout_gravity="center_horizontal"/>
+            android:background="#FFFFFFFF"
+            android:id="@+id/searchTxt" android:layout_gravity="center_horizontal"/>
+
+    <ListView
+            android:layout_width="match_parent"
+            android:layout_height="397dp"
+            android:id="@+id/listView" android:layout_gravity="center_horizontal"/>
+
     <Button
             android:layout_marginTop="350dp"
-            android:background="#444444"
+            android:background="#ff444444"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Search Database"
-            android:id="@+id/button"
+            android:text="@string/searchDB"
+            android:id="@+id/searchBtn"
             android:layout_gravity="center_horizontal"/>
 
 </LinearLayout>

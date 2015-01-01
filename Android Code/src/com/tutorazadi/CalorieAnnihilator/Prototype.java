@@ -1,3 +1,5 @@
+package com.tutorazadi.CalorieAnnihilator;
+
 public class Prototype
 {
 	public static void main(String[] args)

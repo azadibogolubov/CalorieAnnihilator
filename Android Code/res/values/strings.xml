@@ -8,4 +8,7 @@
         <item>Snack</item>
         <item>Drink</item>
     </string-array>
+    <string name="food">Please enter a food item:</string>
+    <string name="foodName">Food name</string>
+    <string name="searchDB">Search Database</string>
 </resources>

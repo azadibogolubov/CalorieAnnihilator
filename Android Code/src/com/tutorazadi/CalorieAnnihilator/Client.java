@@ -1,3 +1,5 @@
+package com.tutorazadi.CalorieAnnihilator;
+
 class Client
 {
 	private String name;
