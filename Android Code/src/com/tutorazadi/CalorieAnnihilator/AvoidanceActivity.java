@@ -9,6 +9,9 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.view.View;
+import android.widget.AdapterView.OnItemClickListener;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 
 import java.util.*;
 
@@ -34,6 +37,15 @@ public class AvoidanceActivity extends Activity {
         listView = (ListView) findViewById(R.id.listView);
         adapter = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_list_item_1, listItems);
         listView.setAdapter(adapter);
+        listView.setOnItemClickListener(new OnItemClickListener() {
+            public void onItemClick(AdapterView<?> parent, View view,
+                                    int position, long id)
+            {
+                String[] calories = ((((TextView) view).getText().toString()).replaceAll("[^0-9.]+", " ").trim()).split(" ");
+                Toast.makeText(getApplicationContext(), "Calories: " + calories[1], Toast.LENGTH_SHORT).show();
+            }
+        });
+
         searchTxt = (EditText) findViewById(R.id.searchTxt);
 
         Button searchBtn = (Button) findViewById(R.id.searchBtn);

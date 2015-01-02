@@ -34,16 +34,18 @@
             android:textSize="24dp"
             />
     <TextView
+            android:id="@+id/caloriesAvoided"
             android:layout_marginTop="250dp"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:text="Calories Avoided: 15801"
+            android:text="Calories Avoided: 0"
             android:textSize="24dp"
             />
     <TextView
+            android:id="@+id/lbsOfSugarAvoided"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:text="Lbs of sugar avoided: 5.8"
+            android:text="Lbs of sugar avoided: 0.00"
             android:textSize="24dp"
             />
 </LinearLayout>

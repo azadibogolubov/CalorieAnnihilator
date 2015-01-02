@@ -1,6 +1,8 @@
 package com.tutorazadi.CalorieAnnihilator;
 
 import android.app.Activity;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.*;
@@ -12,6 +14,7 @@ public class WelcomeActivity extends Activity {
      */
 
     Button avoidanceBtn, bingeBtn;
+    TextView caloriesAvoided, lbsOfSugarAvoided;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -31,8 +34,10 @@ public class WelcomeActivity extends Activity {
             public void onClick(View v) {
                 Intent binge = new Intent(WelcomeActivity.this, BingeActivity.class);
                 WelcomeActivity.this.startActivity(binge);
+
+        caloriesAvoided = (TextView) findViewById(R.id.caloriesAvoided);
+        lbsOfSugarAvoided = (TextView) findViewById(R.id.lbsOfSugarAvoided);
             }
         });
-
     }
 }
