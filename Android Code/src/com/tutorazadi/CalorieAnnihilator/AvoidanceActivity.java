@@ -42,24 +42,37 @@ public class AvoidanceActivity extends Activity {
             public void onClick(View v)
             {
                 String foodName = searchTxt.getText().toString();
-                handleJSON(foodName);
+                handleNameJSON(foodName);
             }
         });
     }
 
-    public void handleJSON(String foodName)
-    {
-        String name = handleNameJSON(foodName);
-        String nutrition = handleNutritionJSON();
-    }
 
-    public String handleNutritionJSON()
+    // Get the serving size and calorie information.
+    public String handleNutritionJSON(String ndbNo)
     {
-        return "";
+        String nutritionUrl = "http://api.data.gov/usda/ndb/nutrients/?format=json&api_key=3hVnhFvj1VAagD29p9Q5b5MeYenARhmAvyX2suCf&nutrients=208&ndbno=" + ndbNo + "&max=1";
+        String servingSize = null, calories = null;
+        JSONParser jParser = new JSONParser();
+        JSONObject json = jParser.getJSONFromUrl(nutritionUrl);
+        try
+        {
+            JSONObject report = json.getJSONObject("report");
+            servingSize = report.getJSONArray("foods").getJSONObject(0).getString("measure");
+            calories = report.getJSONArray("foods").getJSONObject(0).getJSONArray("nutrients").getJSONObject(0).getString("value") + " calories";
+        }
+        catch (JSONException e)
+        {
+            e.printStackTrace();
+        }
+        return servingSize + "\n" + calories;
     }
 
     public String handleNameJSON(String foodName)
     {
+        // Sanitize spaces into %20 for the purposes of URL encoding.
+        foodName = foodName.replace(" ", "%20");
+
         url = "http://api.data.gov/usda/ndb/search/?format=json&q=" + foodName + "&max=25&offset=0&api_key=3hVnhFvj1VAagD29p9Q5b5MeYenARhmAvyX2suCf";
         JSONParser jParser = new JSONParser();
         JSONObject json = jParser.getJSONFromUrl(url);
@@ -74,15 +87,16 @@ public class AvoidanceActivity extends Activity {
             {
                 name = item.getJSONObject(i);
                 nameObj = name.getString("name");
-                listItems.add(nameObj);
+                String ndbNo = name.getString("ndbno");
+                String nutritionInfo = handleNutritionJSON(ndbNo);
+                listItems.add(nameObj + "\n" + nutritionInfo);
             }
             adapter.notifyDataSetChanged();
         }
         catch (JSONException e)
         {
-            e.printStackTrace();
+            Toast.makeText(this, "Food not found. Maybe there was a misspelling.", Toast.LENGTH_LONG).show();
         }
-        return "";
+        return null;
     }
-
 }
