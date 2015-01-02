@@ -1,5 +1,6 @@
 package com.tutorazadi.CalorieAnnihilator;
 
+import android.widget.*;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.json.JSONArray;
@@ -7,11 +8,7 @@ import org.json.JSONArray;
 import android.app.Activity;
 import android.os.Bundle;
 import android.os.StrictMode;
-import android.widget.Button;
 import android.view.View;
-import android.widget.ListView;
-import android.widget.ArrayAdapter;
-import android.widget.EditText;
 
 import java.util.*;
 
@@ -21,6 +18,7 @@ public class AvoidanceActivity extends Activity {
     private ArrayAdapter<String> adapter;
     private ArrayList<String> listItems;
     private EditText searchTxt;
+    int count = 0;
 
     JSONObject list = null;
 
@@ -53,8 +51,6 @@ public class AvoidanceActivity extends Activity {
     {
         String name = handleNameJSON(foodName);
         String nutrition = handleNutritionJSON();
-        listItems.add(name + "\n" + nutrition);
-        adapter.notifyDataSetChanged();
     }
 
     public String handleNutritionJSON()
@@ -64,19 +60,23 @@ public class AvoidanceActivity extends Activity {
 
     public String handleNameJSON(String foodName)
     {
-        url = "http://api.data.gov/usda/ndb/search/?format=json&q=papa%20johns&max=25&offset=0&api_key=3hVnhFvj1VAagD29p9Q5b5MeYenARhmAvyX2suCf";
+        url = "http://api.data.gov/usda/ndb/search/?format=json&q=" + foodName + "&max=25&offset=0&api_key=3hVnhFvj1VAagD29p9Q5b5MeYenARhmAvyX2suCf";
         JSONParser jParser = new JSONParser();
         JSONObject json = jParser.getJSONFromUrl(url);
         try
         {
             list = json.getJSONObject("list");
+            count = list.getInt("end");
             JSONArray item = list.getJSONArray("item");
-            JSONObject name = item.getJSONObject(0);
-            String nameObj = name.getString("name");
-            listItems.add(nameObj);
-            name = item.getJSONObject(1);
-            nameObj = name.getString("name");
-            return nameObj;
+            JSONObject name;
+            String nameObj;
+            for (int i = 0; i < count; i++)
+            {
+                name = item.getJSONObject(i);
+                nameObj = name.getString("name");
+                listItems.add(nameObj);
+            }
+            adapter.notifyDataSetChanged();
         }
         catch (JSONException e)
         {
