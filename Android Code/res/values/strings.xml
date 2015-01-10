@@ -11,4 +11,6 @@
     <string name="food">Please enter a food item:</string>
     <string name="foodName">Food name</string>
     <string name="searchDB">Search Database</string>
+    <string name="damage">How bad is the damage?</string>
+    <string name="poison">State your poison:</string>
 </resources>

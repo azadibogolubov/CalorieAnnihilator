@@ -32,11 +32,14 @@ public class WelcomeActivity extends Activity {
         bingeBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent binge = new Intent(WelcomeActivity.this, BingeActivity.class);
-                WelcomeActivity.this.startActivity(binge);
+                caloriesAvoided = (TextView) findViewById(R.id.caloriesAvoided);
+                lbsOfSugarAvoided = (TextView) findViewById(R.id.lbsOfSugarAvoided);
 
-        caloriesAvoided = (TextView) findViewById(R.id.caloriesAvoided);
-        lbsOfSugarAvoided = (TextView) findViewById(R.id.lbsOfSugarAvoided);
+                Intent binge = new Intent(WelcomeActivity.this, BingeActivity.class);
+                binge.putExtra("calories", caloriesAvoided.getText());
+                binge.putExtra("lbsSugar", lbsOfSugarAvoided.getText());
+
+                WelcomeActivity.this.startActivity(binge);
             }
         });
     }

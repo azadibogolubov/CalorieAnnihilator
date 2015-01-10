@@ -15,7 +15,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="State your poison:"
+            android:text="@string/poison"
             android:id="@+id/textView2" android:layout_gravity="center_horizontal"/>
     <EditText
             android:background="#ffffff"
@@ -23,10 +23,15 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/editText" android:layout_gravity="center_horizontal"/>
+
+    <ListView
+            android:layout_width="match_parent"
+            android:layout_height="397dp"
+            android:id="@+id/listView" android:layout_gravity="center_horizontal"/>
+
     <Button
-            android:layout_marginTop="400dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="How bad is the damage?"
+            android:text="@string/damage"
             android:id="@+id/button" android:layout_gravity="center_horizontal"/>
 </LinearLayout>
