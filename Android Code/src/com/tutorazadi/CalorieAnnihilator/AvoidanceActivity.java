@@ -1,5 +1,7 @@
 package com.tutorazadi.CalorieAnnihilator;
 
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.widget.*;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -55,6 +57,17 @@ public class AvoidanceActivity extends Activity {
             {
                 String foodName = searchTxt.getText().toString();
                 handleNameJSON(foodName);
+
+                SQLiteDatabase mydatabase = openOrCreateDatabase("MainDB",MODE_PRIVATE,null);
+                mydatabase.execSQL("UPDATE CalorieAnnihilator SET Calories=125.25, Sugar=500.00 WHERE Username='azadi'");
+
+                Cursor resultSet = mydatabase.rawQuery("SELECT * FROM CalorieAnnihilator",null);
+                resultSet.moveToFirst();
+
+                String username = resultSet.getString(0);
+                float calories = resultSet.getFloat(1);
+                float sugar = resultSet.getFloat(2);
+                Toast.makeText(AvoidanceActivity.this, "Username: " + username + "\nCalories: " + calories + "\nSugar: " + sugar + "\n", Toast.LENGTH_LONG).show();
             }
         });
     }
