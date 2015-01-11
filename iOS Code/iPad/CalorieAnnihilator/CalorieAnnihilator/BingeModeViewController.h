@@ -10,5 +10,7 @@
 
 @interface BingeModeViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UIButton *damagesBtn;
+
 
 @end

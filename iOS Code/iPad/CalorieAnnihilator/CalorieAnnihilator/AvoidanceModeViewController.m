@@ -16,7 +16,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    _annihilateBtn.layer.borderWidth=1.0f;
+    _annihilateBtn.layer.borderColor=[[UIColor whiteColor] CGColor];
 }
 
 - (void)didReceiveMemoryWarning {

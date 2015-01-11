@@ -10,5 +10,8 @@
 
 @interface MainViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UIButton *avoidanceModeBtn;
+@property (weak, nonatomic) IBOutlet UIButton *bingeModeBtn;
+
 @end
 

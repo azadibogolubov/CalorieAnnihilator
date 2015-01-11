@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="xw0-Am-qh9">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -44,22 +45,13 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bcc-Hg-U5I">
-                                <rect key="frame" x="242" y="175" width="116" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bcc-Hg-U5I">
+                                <rect key="frame" x="231" y="175" width="139" height="30"/>
                                 <state key="normal" title="Avoidance Mode">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <segue destination="0eU-8L-OT7" kind="show" id="2wp-FR-Qxm"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wmy-Yc-P2t">
-                                <rect key="frame" x="259" y="213" width="83" height="30"/>
-                                <state key="normal" title="Binge Mode">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="zRR-6C-vcK" kind="show" id="J0v-y7-eJL"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Calories Avoided: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RlP-PY-C7e">
@@ -74,29 +66,40 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1cR-3N-4dS">
+                                <rect key="frame" x="249" y="213" width="103" height="30"/>
+                                <state key="normal" title="Binge Mode">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="zRR-6C-vcK" kind="show" id="YuX-mC-q2I"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                         <constraints>
-                            <constraint firstAttribute="centerX" secondItem="Wmy-Yc-P2t" secondAttribute="centerX" constant="-0.5" id="8WJ-ot-CYW"/>
+                            <constraint firstAttribute="centerXWithinMargins" secondItem="Bcc-Hg-U5I" secondAttribute="centerXWithinMargins" constant="-0.5" id="2zy-Pi-t88"/>
                             <constraint firstItem="RlP-PY-C7e" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="387" id="BQl-qU-efZ"/>
+                            <constraint firstAttribute="centerX" secondItem="Bcc-Hg-U5I" secondAttribute="centerX" constant="-0.5" id="GWY-13-cqZ"/>
                             <constraint firstItem="Bcc-Hg-U5I" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="111" id="GqC-YJ-btS"/>
-                            <constraint firstItem="D1o-go-ffP" firstAttribute="top" secondItem="Wmy-Yc-P2t" secondAttribute="bottom" constant="262" id="MeD-KK-o80"/>
                             <constraint firstAttribute="centerX" secondItem="zTd-GD-udR" secondAttribute="centerX" constant="-0.5" id="NVO-1i-Io2"/>
                             <constraint firstItem="vTk-HN-k0j" firstAttribute="top" secondItem="zTd-GD-udR" secondAttribute="bottom" constant="18" id="RTp-U2-rS5"/>
-                            <constraint firstItem="Wmy-Yc-P2t" firstAttribute="top" secondItem="Bcc-Hg-U5I" secondAttribute="bottom" constant="8" id="a5C-GC-6Bq"/>
+                            <constraint firstAttribute="centerX" secondItem="1cR-3N-4dS" secondAttribute="centerX" constant="-0.5" id="ako-8P-ds7"/>
                             <constraint firstItem="zTd-GD-udR" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="25" id="bRi-eC-U4x"/>
                             <constraint firstItem="D1o-go-ffP" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="421" id="by2-s3-Omv"/>
                             <constraint firstItem="Bcc-Hg-U5I" firstAttribute="top" secondItem="vTk-HN-k0j" secondAttribute="bottom" constant="30" id="cSD-xS-qqF"/>
                             <constraint firstAttribute="centerX" secondItem="RlP-PY-C7e" secondAttribute="centerX" id="gCi-sh-Cdb"/>
                             <constraint firstAttribute="centerX" secondItem="vTk-HN-k0j" secondAttribute="centerX" constant="-0.5" id="lPs-sJ-MYO"/>
-                            <constraint firstItem="Wmy-Yc-P2t" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="149" id="qGV-K4-QLt"/>
                             <constraint firstAttribute="centerX" secondItem="D1o-go-ffP" secondAttribute="centerX" constant="-0.5" id="qgb-xB-XQo"/>
-                            <constraint firstItem="RlP-PY-C7e" firstAttribute="top" secondItem="Wmy-Yc-P2t" secondAttribute="bottom" constant="228" id="wBv-Ea-0hD"/>
                             <constraint firstAttribute="centerX" secondItem="Bcc-Hg-U5I" secondAttribute="centerX" id="xys-gE-Awz"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="EM8-M3-Ju8"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="avoidanceModeBtn" destination="Bcc-Hg-U5I" id="Xwe-cq-PdB"/>
+                        <outlet property="bingeModeBtn" destination="1cR-3N-4dS" id="asZ-II-Szv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -148,10 +151,13 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="i1O-Ch-kOv"/>
+                    <connections>
+                        <outlet property="damagesBtn" destination="epn-iw-tQO" id="eXM-aJ-z8R"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1eC-yP-hsZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="591" y="86"/>
+            <point key="canvasLocation" x="125" y="58"/>
         </scene>
         <!--Avoidance Mode-->
         <scene sceneID="aEZ-zX-5Hr">
@@ -195,6 +201,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="hwn-AR-ogq"/>
                     <connections>
+                        <outlet property="annihilateBtn" destination="W1U-nK-TGj" id="ifD-nT-2s3"/>
                         <outlet property="searchTxt" destination="Gn1-5J-DGe" id="E8c-vE-gez"/>
                     </connections>
                 </viewController>

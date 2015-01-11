@@ -13,6 +13,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *searchTxt;
 
 - (IBAction)annihilateClick:(UIButton *)sender;
+@property (weak, nonatomic) IBOutlet UIButton *annihilateBtn;
 
 @end
 
