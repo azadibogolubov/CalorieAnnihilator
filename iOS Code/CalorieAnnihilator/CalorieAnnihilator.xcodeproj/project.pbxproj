@@ -1,0 +1,435 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		221D0C8B1A62163D001492CE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 221D0C8A1A62163D001492CE /* main.m */; };
+		221D0C8E1A62163D001492CE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 221D0C8D1A62163D001492CE /* AppDelegate.m */; };
+		221D0C911A62163D001492CE /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 221D0C901A62163D001492CE /* FirstViewController.m */; };
+		221D0C941A62163D001492CE /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 221D0C931A62163D001492CE /* SecondViewController.m */; };
+		221D0C971A62163D001492CE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 221D0C951A62163D001492CE /* Main.storyboard */; };
+		221D0C991A62163D001492CE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 221D0C981A62163D001492CE /* Images.xcassets */; };
+		221D0C9C1A62163D001492CE /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 221D0C9A1A62163D001492CE /* LaunchScreen.xib */; };
+		221D0CA81A62163D001492CE /* CalorieAnnihilatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 221D0CA71A62163D001492CE /* CalorieAnnihilatorTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		221D0CA21A62163D001492CE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 221D0C7D1A62163D001492CE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 221D0C841A62163D001492CE;
+			remoteInfo = CalorieAnnihilator;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		221D0C851A62163D001492CE /* CalorieAnnihilator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CalorieAnnihilator.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		221D0C891A62163D001492CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		221D0C8A1A62163D001492CE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		221D0C8C1A62163D001492CE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		221D0C8D1A62163D001492CE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		221D0C8F1A62163D001492CE /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
+		221D0C901A62163D001492CE /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
+		221D0C921A62163D001492CE /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
+		221D0C931A62163D001492CE /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		221D0C961A62163D001492CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		221D0C981A62163D001492CE /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		221D0C9B1A62163D001492CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		221D0CA11A62163D001492CE /* CalorieAnnihilatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CalorieAnnihilatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		221D0CA61A62163D001492CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		221D0CA71A62163D001492CE /* CalorieAnnihilatorTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CalorieAnnihilatorTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		221D0C821A62163D001492CE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		221D0C9E1A62163D001492CE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		221D0C7C1A62163D001492CE = {
+			isa = PBXGroup;
+			children = (
+				221D0C871A62163D001492CE /* CalorieAnnihilator */,
+				221D0CA41A62163D001492CE /* CalorieAnnihilatorTests */,
+				221D0C861A62163D001492CE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		221D0C861A62163D001492CE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				221D0C851A62163D001492CE /* CalorieAnnihilator.app */,
+				221D0CA11A62163D001492CE /* CalorieAnnihilatorTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		221D0C871A62163D001492CE /* CalorieAnnihilator */ = {
+			isa = PBXGroup;
+			children = (
+				221D0C8C1A62163D001492CE /* AppDelegate.h */,
+				221D0C8D1A62163D001492CE /* AppDelegate.m */,
+				221D0C8F1A62163D001492CE /* FirstViewController.h */,
+				221D0C901A62163D001492CE /* FirstViewController.m */,
+				221D0C921A62163D001492CE /* SecondViewController.h */,
+				221D0C931A62163D001492CE /* SecondViewController.m */,
+				221D0C951A62163D001492CE /* Main.storyboard */,
+				221D0C981A62163D001492CE /* Images.xcassets */,
+				221D0C9A1A62163D001492CE /* LaunchScreen.xib */,
+				221D0C881A62163D001492CE /* Supporting Files */,
+			);
+			path = CalorieAnnihilator;
+			sourceTree = "<group>";
+		};
+		221D0C881A62163D001492CE /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				221D0C891A62163D001492CE /* Info.plist */,
+				221D0C8A1A62163D001492CE /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		221D0CA41A62163D001492CE /* CalorieAnnihilatorTests */ = {
+			isa = PBXGroup;
+			children = (
+				221D0CA71A62163D001492CE /* CalorieAnnihilatorTests.m */,
+				221D0CA51A62163D001492CE /* Supporting Files */,
+			);
+			path = CalorieAnnihilatorTests;
+			sourceTree = "<group>";
+		};
+		221D0CA51A62163D001492CE /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				221D0CA61A62163D001492CE /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		221D0C841A62163D001492CE /* CalorieAnnihilator */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 221D0CAB1A62163D001492CE /* Build configuration list for PBXNativeTarget "CalorieAnnihilator" */;
+			buildPhases = (
+				221D0C811A62163D001492CE /* Sources */,
+				221D0C821A62163D001492CE /* Frameworks */,
+				221D0C831A62163D001492CE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CalorieAnnihilator;
+			productName = CalorieAnnihilator;
+			productReference = 221D0C851A62163D001492CE /* CalorieAnnihilator.app */;
+			productType = "com.apple.product-type.application";
+		};
+		221D0CA01A62163D001492CE /* CalorieAnnihilatorTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 221D0CAE1A62163D001492CE /* Build configuration list for PBXNativeTarget "CalorieAnnihilatorTests" */;
+			buildPhases = (
+				221D0C9D1A62163D001492CE /* Sources */,
+				221D0C9E1A62163D001492CE /* Frameworks */,
+				221D0C9F1A62163D001492CE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				221D0CA31A62163D001492CE /* PBXTargetDependency */,
+			);
+			name = CalorieAnnihilatorTests;
+			productName = CalorieAnnihilatorTests;
+			productReference = 221D0CA11A62163D001492CE /* CalorieAnnihilatorTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		221D0C7D1A62163D001492CE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = "Tutor Azadi";
+				TargetAttributes = {
+					221D0C841A62163D001492CE = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+					221D0CA01A62163D001492CE = {
+						CreatedOnToolsVersion = 6.1.1;
+						TestTargetID = 221D0C841A62163D001492CE;
+					};
+				};
+			};
+			buildConfigurationList = 221D0C801A62163D001492CE /* Build configuration list for PBXProject "CalorieAnnihilator" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 221D0C7C1A62163D001492CE;
+			productRefGroup = 221D0C861A62163D001492CE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				221D0C841A62163D001492CE /* CalorieAnnihilator */,
+				221D0CA01A62163D001492CE /* CalorieAnnihilatorTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		221D0C831A62163D001492CE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				221D0C971A62163D001492CE /* Main.storyboard in Resources */,
+				221D0C9C1A62163D001492CE /* LaunchScreen.xib in Resources */,
+				221D0C991A62163D001492CE /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		221D0C9F1A62163D001492CE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		221D0C811A62163D001492CE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				221D0C941A62163D001492CE /* SecondViewController.m in Sources */,
+				221D0C8E1A62163D001492CE /* AppDelegate.m in Sources */,
+				221D0C911A62163D001492CE /* FirstViewController.m in Sources */,
+				221D0C8B1A62163D001492CE /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		221D0C9D1A62163D001492CE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				221D0CA81A62163D001492CE /* CalorieAnnihilatorTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		221D0CA31A62163D001492CE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 221D0C841A62163D001492CE /* CalorieAnnihilator */;
+			targetProxy = 221D0CA21A62163D001492CE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		221D0C951A62163D001492CE /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				221D0C961A62163D001492CE /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		221D0C9A1A62163D001492CE /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				221D0C9B1A62163D001492CE /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		221D0CA91A62163D001492CE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		221D0CAA1A62163D001492CE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		221D0CAC1A62163D001492CE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = CalorieAnnihilator/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		221D0CAD1A62163D001492CE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = CalorieAnnihilator/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		221D0CAF1A62163D001492CE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = CalorieAnnihilatorTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CalorieAnnihilator.app/CalorieAnnihilator";
+			};
+			name = Debug;
+		};
+		221D0CB01A62163D001492CE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = CalorieAnnihilatorTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CalorieAnnihilator.app/CalorieAnnihilator";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		221D0C801A62163D001492CE /* Build configuration list for PBXProject "CalorieAnnihilator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				221D0CA91A62163D001492CE /* Debug */,
+				221D0CAA1A62163D001492CE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		221D0CAB1A62163D001492CE /* Build configuration list for PBXNativeTarget "CalorieAnnihilator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				221D0CAC1A62163D001492CE /* Debug */,
+				221D0CAD1A62163D001492CE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		221D0CAE1A62163D001492CE /* Build configuration list for PBXNativeTarget "CalorieAnnihilatorTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				221D0CAF1A62163D001492CE /* Debug */,
+				221D0CB01A62163D001492CE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 221D0C7D1A62163D001492CE /* Project object */;
+}
