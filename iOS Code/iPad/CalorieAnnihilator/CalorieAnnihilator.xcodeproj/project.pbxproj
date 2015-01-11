@@ -362,6 +362,7 @@
 				INFOPLIST_FILE = CalorieAnnihilator/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -372,6 +373,7 @@
 				INFOPLIST_FILE = CalorieAnnihilator/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -434,6 +436,7 @@
 				221D0CDF1A621BEE001492CE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		221D0CE01A621BEE001492CE /* Build configuration list for PBXNativeTarget "CalorieAnnihilatorTests" */ = {
 			isa = XCConfigurationList;
@@ -442,6 +445,7 @@
 				221D0CE21A621BEE001492CE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
