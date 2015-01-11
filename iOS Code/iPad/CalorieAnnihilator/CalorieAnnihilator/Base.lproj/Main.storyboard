@@ -176,6 +176,9 @@
                                 <state key="normal" title="Annihilate it!">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="annihilateClick:" destination="0eU-8L-OT7" eventType="touchDown" id="yNX-z5-jhi"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Gn1-5J-DGe">
                                 <rect key="frame" x="155" y="129" width="291" height="30"/>
@@ -191,6 +194,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="hwn-AR-ogq"/>
+                    <connections>
+                        <outlet property="searchTxt" destination="Gn1-5J-DGe" id="E8c-vE-gez"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VEM-jr-vgv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

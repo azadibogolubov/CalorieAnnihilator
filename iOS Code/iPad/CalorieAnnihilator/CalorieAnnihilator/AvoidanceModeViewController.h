@@ -10,6 +10,9 @@
 
 @interface AvoidanceModeViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UITextField *searchTxt;
+
+- (IBAction)annihilateClick:(UIButton *)sender;
 
 @end
 
