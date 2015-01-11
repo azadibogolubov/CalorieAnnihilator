@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "221D0C841A62163D001492CE"
+               BlueprintIdentifier = "221D0CB91A621BEE001492CE"
                BuildableName = "CalorieAnnihilator.app"
                BlueprintName = "CalorieAnnihilator"
                ReferencedContainer = "container:CalorieAnnihilator.xcodeproj">
@@ -28,7 +28,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "221D0CA01A62163D001492CE"
+               BlueprintIdentifier = "221D0CD21A621BEE001492CE"
                BuildableName = "CalorieAnnihilatorTests.xctest"
                BlueprintName = "CalorieAnnihilatorTests"
                ReferencedContainer = "container:CalorieAnnihilator.xcodeproj">
@@ -46,7 +46,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "221D0CA01A62163D001492CE"
+               BlueprintIdentifier = "221D0CD21A621BEE001492CE"
                BuildableName = "CalorieAnnihilatorTests.xctest"
                BlueprintName = "CalorieAnnihilatorTests"
                ReferencedContainer = "container:CalorieAnnihilator.xcodeproj">
@@ -56,7 +56,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "221D0C841A62163D001492CE"
+            BlueprintIdentifier = "221D0CB91A621BEE001492CE"
             BuildableName = "CalorieAnnihilator.app"
             BlueprintName = "CalorieAnnihilator"
             ReferencedContainer = "container:CalorieAnnihilator.xcodeproj">
@@ -75,7 +75,7 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "221D0C841A62163D001492CE"
+            BlueprintIdentifier = "221D0CB91A621BEE001492CE"
             BuildableName = "CalorieAnnihilator.app"
             BlueprintName = "CalorieAnnihilator"
             ReferencedContainer = "container:CalorieAnnihilator.xcodeproj">
@@ -93,7 +93,7 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "221D0C841A62163D001492CE"
+            BlueprintIdentifier = "221D0CB91A621BEE001492CE"
             BuildableName = "CalorieAnnihilator.app"
             BlueprintName = "CalorieAnnihilator"
             ReferencedContainer = "container:CalorieAnnihilator.xcodeproj">
