@@ -14,11 +14,11 @@
 		<string>https://github.com/tutorazadi/CalorieAnnihilator.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>iOS Code/iPad/CalorieAnnihilator/CalorieAnnihilator.xcodeproj</string>
+	<string>iOS Code/CalorieAnnihilator/CalorieAnnihilator.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>8F77FA41814B358D47AEF71C4843380A1C6A5DD3</key>
-		<string>../../../../..</string>
+		<string>../../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/tutorazadi/CalorieAnnihilator.git</string>

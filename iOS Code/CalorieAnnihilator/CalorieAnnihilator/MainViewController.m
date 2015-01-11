@@ -17,12 +17,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-    _avoidanceModeBtn.layer.borderWidth=1.0f;
-    _avoidanceModeBtn.layer.borderColor=[[UIColor whiteColor] CGColor];
-
-    _bingeModeBtn.layer.borderWidth=1.0f;
-    _bingeModeBtn.layer.borderColor=[[UIColor whiteColor] CGColor];
 }
 
 - (void)didReceiveMemoryWarning {

@@ -16,8 +16,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    _damagesBtn.layer.borderWidth=1.0f;
-    _damagesBtn.layer.borderColor=[[UIColor whiteColor] CGColor];
 }
 
 - (void)didReceiveMemoryWarning {
