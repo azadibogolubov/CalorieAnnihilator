@@ -13,4 +13,5 @@
     <string name="searchDB">Search Database</string>
     <string name="damage">How bad is the damage?</string>
     <string name="poison">State your poison:</string>
+    <string name="hello">Hello</string>
 </resources>
