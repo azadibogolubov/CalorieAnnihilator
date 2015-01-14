@@ -23,6 +23,7 @@
     // Dispose of any resources that can be recreated.
 }
 
+// This will perform the lookup to find the food item in the database and add it to the # of calories avoided.
 - (IBAction)annihilateClick:(UIButton *)sender
 {
     // Prepare URL for processing...
@@ -40,6 +41,7 @@
     // Get the response data and parse into JSON...
     NSData *responseData = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&requestError];
     
+    // Drill down into the JSON to get the items.
     NSDictionary* object = [NSJSONSerialization
                        JSONObjectWithData:responseData
                        options:0
@@ -47,6 +49,7 @@
     NSDictionary* list = [object objectForKey:@"list"];
     NSArray* item = [list objectForKey:@"item"];
     NSString* name = [item[0] objectForKey:@"name"];
+    // The NDB # is the number used to perform a more detailed query on the national database (NDB).
     NSLog(@"Name: %@\n NDB #: %@", name, [item[0] objectForKey:@"ndbno"]);
 }
 @end
