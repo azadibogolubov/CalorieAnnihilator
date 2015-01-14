@@ -28,7 +28,8 @@ public class AvoidanceActivity extends Activity {
     JSONObject list = null;
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.avoidance);
 
@@ -44,7 +45,11 @@ public class AvoidanceActivity extends Activity {
                                     int position, long id)
             {
                 String[] calories = ((((TextView) view).getText().toString()).replaceAll("[^0-9.]+", " ").trim()).split(" ");
-                Toast.makeText(getApplicationContext(), "Calories: " + calories[1], Toast.LENGTH_SHORT).show();
+                SQLiteDatabase mydatabase = openOrCreateDatabase("MainDB",MODE_PRIVATE,null);
+                Cursor resultSet = mydatabase.rawQuery("SELECT * FROM CalorieAnnihilator WHERE Username='azadi'",null);
+                resultSet.moveToFirst();
+                if (resultSet.getCount() > 0)
+                    mydatabase.execSQL("UPDATE CalorieAnnihilator SET Calories=" + calories + ", Sugar=0.0 WHERE Username='azadi");
             }
         });
 
@@ -57,17 +62,6 @@ public class AvoidanceActivity extends Activity {
             {
                 String foodName = searchTxt.getText().toString();
                 handleNameJSON(foodName);
-
-                SQLiteDatabase mydatabase = openOrCreateDatabase("MainDB",MODE_PRIVATE,null);
-                mydatabase.execSQL("UPDATE CalorieAnnihilator SET Calories=125.25, Sugar=500.00 WHERE Username='azadi'");
-
-                Cursor resultSet = mydatabase.rawQuery("SELECT * FROM CalorieAnnihilator",null);
-                resultSet.moveToFirst();
-
-                String username = resultSet.getString(0);
-                float calories = resultSet.getFloat(1);
-                float sugar = resultSet.getFloat(2);
-                Toast.makeText(AvoidanceActivity.this, "Username: " + username + "\nCalories: " + calories + "\nSugar: " + sugar + "\n", Toast.LENGTH_LONG).show();
             }
         });
     }

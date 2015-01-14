@@ -17,29 +17,30 @@ public class WelcomeActivity extends Activity {
     TextView caloriesAvoided, lbsOfSugarAvoided;
     String username;
     float calories, sugar;
+    SQLiteDatabase mydatabase;
+    Cursor resultSet;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
 
-        SQLiteDatabase mydatabase = openOrCreateDatabase("MainDB",MODE_PRIVATE,null);
+        mydatabase = openOrCreateDatabase("MainDB",MODE_PRIVATE,null);
         mydatabase.execSQL("CREATE TABLE IF NOT EXISTS CalorieAnnihilator(Username VARCHAR, Calories DECIMAL(10,2), Sugar DECIMAL(10, 2));");
-        // mydatabase.execSQL("INSERT INTO CalorieAnnihilator VALUES('azadi', 0.00, 0.00);");
-        Cursor resultSet = mydatabase.rawQuery("SELECT * FROM CalorieAnnihilator",null);
+        resultSet = mydatabase.rawQuery("SELECT * FROM CalorieAnnihilator",null);
         resultSet.moveToFirst();
 
-        username = resultSet.getString(0);
-        calories = resultSet.getFloat(1);
-        sugar = resultSet.getFloat(2);
-
+        if (resultSet.getCount() > 0)
+        {
+            username = resultSet.getString(0);
+            calories = resultSet.getFloat(1);
+            sugar = resultSet.getFloat(2);
+        }
         caloriesAvoided = (TextView) findViewById(R.id.caloriesAvoided);
         caloriesAvoided.setText("Calories avoided: " + calories);
 
         lbsOfSugarAvoided = (TextView) findViewById(R.id.lbsOfSugarAvoided);
         lbsOfSugarAvoided.setText("Lbs of sugar avoided: " + sugar);
-
-        // Toast.makeText(this, "Username: " + username + "\nCalories: " + calories + "\nSugar: " + sugar + "\n", Toast.LENGTH_LONG).show();
 
         avoidanceBtn = (Button) findViewById(R.id.avoidanceBtn);
         avoidanceBtn.setOnClickListener(new View.OnClickListener()
@@ -62,5 +63,26 @@ public class WelcomeActivity extends Activity {
                 WelcomeActivity.this.startActivity(binge);
             }
         });
+    }
+
+    @Override
+    public void onResume()
+    {
+        super.onResume();
+        mydatabase = openOrCreateDatabase("MainDB",MODE_PRIVATE,null);
+        resultSet = mydatabase.rawQuery("SELECT * FROM CalorieAnnihilator",null);
+        resultSet.moveToFirst();
+
+        if (resultSet.getCount() > 0)
+        {
+            username = resultSet.getString(0);
+            calories = resultSet.getFloat(1);
+            sugar = resultSet.getFloat(2);
+        }
+        caloriesAvoided = (TextView) findViewById(R.id.caloriesAvoided);
+        caloriesAvoided.setText("Calories avoided: " + calories);
+
+        lbsOfSugarAvoided = (TextView) findViewById(R.id.lbsOfSugarAvoided);
+        lbsOfSugarAvoided.setText("Lbs of sugar avoided: " + sugar);
     }
 }
