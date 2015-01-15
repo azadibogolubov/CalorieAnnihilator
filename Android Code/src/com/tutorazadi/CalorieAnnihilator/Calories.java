@@ -1,7 +1,5 @@
 package com.tutorazadi.CalorieAnnihilator;
 
-// Taken from http://www.vogella.com/tutorials/AndroidSQLite/article.html
-
 public class Calories
 {
     private long id;

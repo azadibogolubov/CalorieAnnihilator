@@ -21,7 +21,7 @@ public class TestDatabaseActivity extends ListActivity
         datasource = new DataSource(this);
         datasource.open();
 
-        List<Calories> values = datasource.getAllComments();
+        List<Calories> values = datasource.getAllEntries();
 
         // use the SimpleCursorAdapter to show the
         // elements in a ListView
@@ -43,14 +43,14 @@ public class TestDatabaseActivity extends ListActivity
                 float[] amounts = new float[]{5.0f, 150.00f, 300.10f};
                 int nextInt = new Random().nextInt(3);
                 // save the new comment to the database
-                calories = datasource.createAmount(amounts[nextInt]);
+                calories = datasource.createEntry(amounts[nextInt]);
                 adapter.add(calories);
                 break;
             case R.id.delete:
                 if (getListAdapter().getCount() > 0)
                 {
                     calories = (Calories) getListAdapter().getItem(0);
-                    datasource.deleteComment(calories);
+                    datasource.deleteEntry(calories);
                     adapter.remove(calories);
                 }
                 break;
@@ -71,5 +71,4 @@ public class TestDatabaseActivity extends ListActivity
         datasource.close();
         super.onPause();
     }
-
 }

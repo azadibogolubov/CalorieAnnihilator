@@ -5,8 +5,6 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
 
-// Taken from http://www.vogella.com/tutorials/AndroidSQLite/article.html
-
 public class SQLiteHelper extends SQLiteOpenHelper
 {
     public static final String TABLE_CALORIE_ANNIHILATOR = "CalorieAnnihilator";

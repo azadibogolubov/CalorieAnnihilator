@@ -9,7 +9,6 @@ import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 
-// Taken from http://www.vogella.com/tutorials/AndroidSQLite/article.html
 public class DataSource
 {
     private SQLiteDatabase database;
@@ -31,7 +30,7 @@ public class DataSource
         dbHelper.close();
     }
 
-    public Calories createAmount(float amount)
+    public Calories createEntry(float amount)
     {
         ContentValues values = new ContentValues();
         values.put(SQLiteHelper.COLUMN_CALORIES, amount);
@@ -46,7 +45,7 @@ public class DataSource
         return newAmount;
     }
 
-    public void deleteComment(Calories comment)
+    public void deleteEntry(Calories comment)
     {
         long id = comment.getId();
         System.out.println("Comment deleted with id: " + id);
@@ -54,9 +53,9 @@ public class DataSource
                 + " = " + id, null);
     }
 
-    public List<Calories> getAllComments()
+    public List<Calories> getAllEntries()
     {
-        List<Calories> comments = new ArrayList<Calories>();
+        List<Calories> calories = new ArrayList<Calories>();
 
         Cursor cursor = database.query(SQLiteHelper.TABLE_CALORIE_ANNIHILATOR,
                 allColumns, null, null, null, null, null);
@@ -64,12 +63,12 @@ public class DataSource
         cursor.moveToFirst();
         while (!cursor.isAfterLast()) {
             Calories comment = cursorToComment(cursor);
-            comments.add(comment);
+            calories.add(comment);
             cursor.moveToNext();
         }
         // make sure to close the cursor
         cursor.close();
-        return comments;
+        return calories;
     }
 
     private Calories cursorToComment(Cursor cursor)
