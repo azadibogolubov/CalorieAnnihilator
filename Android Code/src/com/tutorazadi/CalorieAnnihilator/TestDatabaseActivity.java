@@ -40,11 +40,12 @@ public class TestDatabaseActivity extends ListActivity
         switch (view.getId())
         {
             case R.id.add:
-                float[] amounts = new float[]{5.0f, 150.00f, 300.10f};
-                int nextInt = new Random().nextInt(3);
+                float calorieAmount = 150.0f;
+                float sugarAmount = 300.0f;
                 // save the new comment to the database
-                calories = datasource.createEntry(amounts[nextInt]);
+                calories = datasource.createEntry(calorieAmount, sugarAmount);
                 adapter.add(calories);
+
                 break;
             case R.id.delete:
                 if (getListAdapter().getCount() > 0)

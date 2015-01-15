@@ -8,6 +8,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
+import android.util.Log;
 
 public class DataSource
 {
@@ -30,18 +31,23 @@ public class DataSource
         dbHelper.close();
     }
 
-    public Calories createEntry(float amount)
+    public Calories createEntry(float calorieAmount, float sugarAmount)
     {
+        Log.d("", "Sugar amount: " + sugarAmount);
         ContentValues values = new ContentValues();
-        values.put(SQLiteHelper.COLUMN_CALORIES, amount);
+        values.put(SQLiteHelper.COLUMN_CALORIES, calorieAmount);
+        values.put(SQLiteHelper.COLUMN_SUGAR, sugarAmount);
+
         long insertId = database.insert(SQLiteHelper.TABLE_CALORIE_ANNIHILATOR, null,
                 values);
         Cursor cursor = database.query(SQLiteHelper.TABLE_CALORIE_ANNIHILATOR,
                 allColumns, SQLiteHelper.COLUMN_ID + " = " + insertId, null,
                 null, null, null);
         cursor.moveToFirst();
+
         Calories newAmount = cursorToComment(cursor);
         cursor.close();
+
         return newAmount;
     }
 
@@ -62,8 +68,8 @@ public class DataSource
 
         cursor.moveToFirst();
         while (!cursor.isAfterLast()) {
-            Calories comment = cursorToComment(cursor);
-            calories.add(comment);
+            Calories entry = cursorToComment(cursor);
+            calories.add(entry);
             cursor.moveToNext();
         }
         // make sure to close the cursor
@@ -73,9 +79,10 @@ public class DataSource
 
     private Calories cursorToComment(Cursor cursor)
     {
-        Calories comment = new Calories();
-        comment.setId(cursor.getLong(0));
-        comment.setCalories(cursor.getFloat(1));
-        return comment;
+        Calories entry = new Calories();
+        entry.setId(cursor.getLong(0));
+        entry.setCalories(cursor.getFloat(1));
+        entry.setSugar(cursor.getFloat(2));
+        return entry;
     }
 }
