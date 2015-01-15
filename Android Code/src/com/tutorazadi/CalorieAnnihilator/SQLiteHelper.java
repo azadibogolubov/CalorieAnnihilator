@@ -9,20 +9,21 @@ import android.util.Log;
 
 public class SQLiteHelper extends SQLiteOpenHelper
 {
-    public static final String TABLE_COMMENTS = "comments";
+    public static final String TABLE_CALORIE_ANNIHILATOR = "CalorieAnnihilator";
     public static final String COLUMN_ID = "_id";
-    public static final String COLUMN_COMMENT = "comment";
+    public static final String COLUMN_CALORIES = "calories";
+    public static final String COLUMN_SUGAR = "sugar";
 
-    private static final String DATABASE_NAME = "commments.db";
+    private static final String DATABASE_NAME = "calorieannihilator.db";
     private static final int DATABASE_VERSION = 1;
 
     // Database creation sql statement
-    private static final String DATABASE_CREATE = "create table Comments(_id integer primary key autoincrement, "
-            + "comment text not null);";
+    private static final String DATABASE_CREATE = "create table CalorieAnnihilator(_id integer primary key autoincrement, "
+            + COLUMN_CALORIES + " decimal(5,2), " + COLUMN_SUGAR + " decimal(5,2));";
 
     public SQLiteHelper(Context context)
     {
-        super(context, "comments.db", null, 1);
+        super(context, "calorieannihilator.db", null, 1);
     }
 
     @Override
@@ -36,7 +37,7 @@ public class SQLiteHelper extends SQLiteOpenHelper
     {
         Log.w(SQLiteHelper.class.getName(),
                 "Upgrading database from version " + oldVersion + " to " + newVersion + ", which will destroy all old data");
-        db.execSQL("DROP TABLE IF EXISTS Comments");
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_CALORIE_ANNIHILATOR);
         onCreate(db);
     }
 }

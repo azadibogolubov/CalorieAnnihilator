@@ -15,10 +15,7 @@ public class DataSource
     private SQLiteDatabase database;
     private SQLiteHelper dbHelper;
     private String[] allColumns = { SQLiteHelper.COLUMN_ID,
-            SQLiteHelper.COLUMN_COMMENT };
-
-    public DataSource()
-    {}
+            SQLiteHelper.COLUMN_CALORIES, SQLiteHelper.COLUMN_SUGAR };
 
     public DataSource(Context context)
     {
@@ -34,39 +31,39 @@ public class DataSource
         dbHelper.close();
     }
 
-    public Comment createComment(String comment)
+    public Calories createAmount(float amount)
     {
         ContentValues values = new ContentValues();
-        values.put(SQLiteHelper.COLUMN_COMMENT, comment);
-        long insertId = database.insert(SQLiteHelper.TABLE_COMMENTS, null,
+        values.put(SQLiteHelper.COLUMN_CALORIES, amount);
+        long insertId = database.insert(SQLiteHelper.TABLE_CALORIE_ANNIHILATOR, null,
                 values);
-        Cursor cursor = database.query(SQLiteHelper.TABLE_COMMENTS,
+        Cursor cursor = database.query(SQLiteHelper.TABLE_CALORIE_ANNIHILATOR,
                 allColumns, SQLiteHelper.COLUMN_ID + " = " + insertId, null,
                 null, null, null);
         cursor.moveToFirst();
-        Comment newComment = cursorToComment(cursor);
+        Calories newAmount = cursorToComment(cursor);
         cursor.close();
-        return newComment;
+        return newAmount;
     }
 
-    public void deleteComment(Comment comment)
+    public void deleteComment(Calories comment)
     {
         long id = comment.getId();
         System.out.println("Comment deleted with id: " + id);
-        database.delete(SQLiteHelper.TABLE_COMMENTS, SQLiteHelper.COLUMN_ID
+        database.delete(SQLiteHelper.TABLE_CALORIE_ANNIHILATOR, SQLiteHelper.COLUMN_ID
                 + " = " + id, null);
     }
 
-    public List<Comment> getAllComments()
+    public List<Calories> getAllComments()
     {
-        List<Comment> comments = new ArrayList<Comment>();
+        List<Calories> comments = new ArrayList<Calories>();
 
-        Cursor cursor = database.query(SQLiteHelper.TABLE_COMMENTS,
+        Cursor cursor = database.query(SQLiteHelper.TABLE_CALORIE_ANNIHILATOR,
                 allColumns, null, null, null, null, null);
 
         cursor.moveToFirst();
         while (!cursor.isAfterLast()) {
-            Comment comment = cursorToComment(cursor);
+            Calories comment = cursorToComment(cursor);
             comments.add(comment);
             cursor.moveToNext();
         }
@@ -75,11 +72,11 @@ public class DataSource
         return comments;
     }
 
-    private Comment cursorToComment(Cursor cursor)
+    private Calories cursorToComment(Cursor cursor)
     {
-        Comment comment = new Comment();
+        Calories comment = new Calories();
         comment.setId(cursor.getLong(0));
-        comment.setComment(cursor.getString(1));
+        comment.setCalories(cursor.getFloat(1));
         return comment;
     }
 }

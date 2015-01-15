@@ -21,11 +21,11 @@ public class TestDatabaseActivity extends ListActivity
         datasource = new DataSource(this);
         datasource.open();
 
-        List<Comment> values = datasource.getAllComments();
+        List<Calories> values = datasource.getAllComments();
 
         // use the SimpleCursorAdapter to show the
         // elements in a ListView
-        ArrayAdapter<Comment> adapter = new ArrayAdapter<Comment>(this,
+        ArrayAdapter<Calories> adapter = new ArrayAdapter<Calories>(this,
                 android.R.layout.simple_list_item_1, values);
         setListAdapter(adapter);
     }
@@ -35,23 +35,23 @@ public class TestDatabaseActivity extends ListActivity
     public void onClick(View view)
     {
         @SuppressWarnings("unchecked")
-        ArrayAdapter<Comment> adapter = (ArrayAdapter<Comment>) getListAdapter();
-        Comment comment = null;
+        ArrayAdapter<Calories> adapter = (ArrayAdapter<Calories>) getListAdapter();
+        Calories calories = null;
         switch (view.getId())
         {
             case R.id.add:
-                String[] comments = new String[]{"Cool", "Very nice", "Hate it"};
+                float[] amounts = new float[]{5.0f, 150.00f, 300.10f};
                 int nextInt = new Random().nextInt(3);
                 // save the new comment to the database
-                comment = datasource.createComment(comments[nextInt]);
-                adapter.add(comment);
+                calories = datasource.createAmount(amounts[nextInt]);
+                adapter.add(calories);
                 break;
             case R.id.delete:
                 if (getListAdapter().getCount() > 0)
                 {
-                    comment = (Comment) getListAdapter().getItem(0);
-                    datasource.deleteComment(comment);
-                    adapter.remove(comment);
+                    calories = (Calories) getListAdapter().getItem(0);
+                    datasource.deleteComment(calories);
+                    adapter.remove(calories);
                 }
                 break;
         }
