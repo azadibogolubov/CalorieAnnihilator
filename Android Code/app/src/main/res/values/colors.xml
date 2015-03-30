@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="white" type="color">#FFFFFF</item>
+    <item name="button_background" type="color">#444444</item>
+    <item name="blue" type="color">#0000CC</item>
+    <item name="middle_blue" type="color">#3333FF</item>
+    <item name="sky_blue" type="color">#7EC0EE</item>
+
+    <item name="red" type="color">#CC0000</item>
+    <item name="middle_red" type="color">#FF3333</item>
+    <item name="pale_red" type="color">#EE7EC0</item>
+
+</resources>
