@@ -11,6 +11,7 @@
     </string-array>
     <!-- From: file:/Users/azadi/Documents/workspace/CalorieAnnihilator/Android%20Code/app/src/main/res/values/colors.xml -->
     <eat-comment/>
+    <item name="black" type="color">#000000</item>
     <item name="blue" type="color">#0000CC</item>
     <item name="button_background" type="color">#444444</item>
     <item name="middle_blue" type="color">#3333FF</item>

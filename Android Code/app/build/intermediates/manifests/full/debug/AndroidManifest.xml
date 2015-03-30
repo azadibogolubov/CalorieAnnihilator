@@ -23,11 +23,6 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.tutorazadi.CalorieAnnihilator.TestDatabaseActivity"
-            android:label="Welcome to Calorie Annihilator" >
-        </activity>
--->
-        <activity
             android:name="com.tutorazadi.CalorieAnnihilator.AvoidanceActivity"
             android:label="Avoidance Mode" />
         <activity

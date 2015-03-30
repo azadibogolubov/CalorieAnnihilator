@@ -6,6 +6,7 @@
     <uses-sdk android:minSdkVersion="19"/>
     <uses-permission android:name="android.permission.INTERNET"/>
     <application android:label="@string/app_name" android:icon="@drawable/ic_launcher">
+
         <activity android:name=".MainActivity"
                   android:label="Welcome to Calorie Annihilator" >
             <intent-filter>
@@ -13,11 +14,10 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".TestDatabaseActivity"
-                  android:label="Welcome to Calorie Annihilator" >
-        </activity>-->
+
         <activity android:name=".AvoidanceActivity"
                   android:label="Avoidance Mode"/>
+
         <activity android:name=".BingeActivity"
                   android:label="Binge Mode" />
     </application>

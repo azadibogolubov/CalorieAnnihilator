@@ -2,28 +2,30 @@ package com.tutorazadi.CalorieAnnihilator;
 
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.os.AsyncTask;
 import android.widget.*;
-import org.json.JSONException;
-import org.json.JSONObject;
-import org.json.JSONArray;
+import org.json.simple.*;
+import org.json.simple.parser.*;
 
 import android.app.Activity;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.view.View;
 import android.widget.AdapterView.OnItemClickListener;
+import java.io.IOException;
+import java.net.URL;
+import java.net.HttpURLConnection;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 
 import java.util.*;
 
 public class AvoidanceActivity extends Activity {
     private static String url;
     private ListView listView;
-    private ArrayAdapter<String> adapter;
-    private ArrayList<String> listItems;
+    private FoodListAdapter adapter;
     private EditText searchTxt;
-    int count = 0;
-
-    JSONObject list = null;
+    private ArrayList<FoodItem> listItems;
 
     @Override
     public void onCreate(Bundle savedInstanceState)
@@ -34,9 +36,10 @@ public class AvoidanceActivity extends Activity {
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
 
-        listItems = new ArrayList<String>();
+        listItems = new ArrayList<>();
+        adapter = new FoodListAdapter(getApplicationContext(), R.layout.food_item, listItems);
+
         listView = (ListView) findViewById(R.id.listView);
-        adapter = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_list_item_1, listItems);
         listView.setAdapter(adapter);
         listView.setOnItemClickListener(new OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View view,
@@ -58,62 +61,106 @@ public class AvoidanceActivity extends Activity {
             @Override
             public void onClick(View v)
             {
-                String foodName = searchTxt.getText().toString();
-                handleNameJSON(foodName);
+                final String foodName = searchTxt.getText().toString();
+
+                listItems = getResults(foodName);
+                adapter = new FoodListAdapter(getApplicationContext(), R.layout.food_item, listItems);
+                listView.setAdapter(adapter);
+                adapter.notifyDataSetChanged();
             }
         });
     }
 
+    public ArrayList<FoodItem> getResults(String request) {
+        request = sanitize(request);
 
-    // Get the serving size and calorie information.
-    public String handleNutritionJSON(String ndbNo)
-    {
-        String nutritionUrl = "http://api.data.gov/usda/ndb/nutrients/?format=json&api_key=3hVnhFvj1VAagD29p9Q5b5MeYenARhmAvyX2suCf&nutrients=208&ndbno=" + ndbNo + "&max=1";
-        String servingSize = null, calories = null;
-        JSONParser jParser = new JSONParser();
-        JSONObject json = jParser.getJSONFromUrl(nutritionUrl);
-        try
+        ArrayList<FoodItem> results = new ArrayList<>();
+        JSONParser parser = new JSONParser();
+
+        for (int i = 0; i < 20; i++)
         {
-            JSONObject report = json.getJSONObject("report");
-            servingSize = report.getJSONArray("foods").getJSONObject(0).getString("measure");
-            calories = report.getJSONArray("foods").getJSONObject(0).getJSONArray("nutrients").getJSONObject(0).getString("value") + " calories";
+            try {
+                String name = issueGetRequest("http://api.data.gov/usda/ndb/search/?format=json&q=" + request + "&max=25&offset=0&api_key=3hVnhFvj1VAagD29p9Q5b5MeYenARhmAvyX2suCf");
+                Object parsedName = parser.parse(name);
+                Object foodName = getName(parsedName, i);
+                Object ndbno = getNDB(parsedName, i);
+
+                Object parsedData = parser.parse(issueGetRequest("http://api.data.gov/usda/ndb/nutrients/?format=json&api_key=3hVnhFvj1VAagD29p9Q5b5MeYenARhmAvyX2suCf&nutrients=208&ndbno=" + ndbno + "&max=1"));
+                Object servingSize = getServingSize(parsedData, 0);
+                Object calories = getCalories(parsedData, 0);
+
+                results.add(new FoodItem(foodName.toString(), servingSize.toString(), calories.toString()));
+            }
+            catch (ParseException | IOException | IndexOutOfBoundsException e) {
+                if (e instanceof ParseException)
+                    System.out.println("Error parsing JSON");
+                else if (e instanceof IOException)
+                    System.out.println("Error during GET request.");
+                else if (e instanceof IndexOutOfBoundsException)
+                    break;
+            }
         }
-        catch (JSONException e)
-        {
-            e.printStackTrace();
-        }
-        return servingSize + "\n" + calories;
+        return results;
     }
 
-    public String handleNameJSON(String foodName)
+    public String sanitize(String input)
     {
-        // Sanitize spaces into %20 for the purposes of URL encoding.
-        foodName = foodName.replace(" ", "%20");
+        input = input.replace(" ", "%20");
+        return input;
+    }
 
-        url = "http://api.data.gov/usda/ndb/search/?format=json&q=" + foodName + "&max=25&offset=0&api_key=3hVnhFvj1VAagD29p9Q5b5MeYenARhmAvyX2suCf";
-        JSONParser jParser = new JSONParser();
-        JSONObject json = jParser.getJSONFromUrl(url);
-        try
-        {
-            list = json.getJSONObject("list");
-            count = list.getInt("end");
-            JSONArray item = list.getJSONArray("item");
-            JSONObject name;
-            String nameObj;
-            for (int i = 0; i < count; i++)
-            {
-                name = item.getJSONObject(i);
-                nameObj = name.getString("name");
-                String ndbNo = name.getString("ndbno");
-                String nutritionInfo = handleNutritionJSON(ndbNo);
-                listItems.add(nameObj + "\n" + nutritionInfo);
-            }
-            adapter.notifyDataSetChanged();
+    public static String issueGetRequest(String urlQuery) throws IOException {
+        URL url = new URL(urlQuery);
+        HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+
+        if (connection.getResponseCode() != 200)
+            throw new IOException(connection.getResponseMessage());
+
+        // Buffer the result into a string
+        BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+        StringBuilder sb = new StringBuilder();
+        String line;
+        while ((line = reader.readLine()) != null) {
+            sb.append(line);
         }
-        catch (JSONException e)
-        {
-            Toast.makeText(this, "Food not found. Maybe there was a misspelling.", Toast.LENGTH_LONG).show();
-        }
-        return null;
+        reader.close();
+
+        connection.disconnect();
+        return sb.toString();
+    }
+
+    public static Object getServingSize(Object input, int index) {
+        Object reportData = ((JSONObject) input).get("report");
+        Object foodsData = ((JSONObject) reportData).get("foods");
+        Object foodsArray = ((JSONArray) foodsData).get(index);
+        Object servingSize = ((JSONObject) foodsArray).get("measure");
+        return servingSize;
+    }
+
+    public static Object getCalories(Object input, int index) {
+        Object reportData = ((JSONObject) input).get("report");
+        Object foodsData = ((JSONObject) reportData).get("foods");
+        Object foodsArray = ((JSONArray) foodsData).get(index);
+        Object nutrientsData = ((JSONObject) foodsArray).get("nutrients");
+        Object nutrientsArray = ((JSONArray) nutrientsData).get(index);
+        Object value = ((JSONObject) nutrientsArray).get("value");
+        return value;
+    }
+
+    public static Object getName(Object input, int index) {
+        Object listData = ((JSONObject) input).get("list");
+        Object itemData = ((JSONObject) listData).get("item");
+        Object itemArray = ((JSONArray) itemData).get(index);
+        Object name = ((JSONObject) itemArray).get("name");
+        return name;
+    }
+
+    public static Object getNDB(Object input, int index) {
+        Object listData = ((JSONObject) input).get("list");
+        Object itemData = ((JSONObject) listData).get("item");
+        Object itemArray = ((JSONArray) itemData).get(index);
+        Object ndb = ((JSONObject) itemArray).get("ndbno");
+        return ndb;
     }
 }
+

@@ -4,6 +4,7 @@
     <item name="button_background" type="color">#444444</item>
     <item name="blue" type="color">#0000CC</item>
     <item name="middle_blue" type="color">#3333FF</item>
+    <item name="black" type="color">#000000</item>
     <item name="sky_blue" type="color">#7EC0EE</item>
 
     <item name="red" type="color">#CC0000</item>
