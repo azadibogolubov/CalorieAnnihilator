@@ -1,12 +1,18 @@
 package com.tutorazadi.CalorieAnnihilator;
 
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import java.util.ArrayList;
 import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.LayoutInflater;
+import android.widget.LinearLayout;
+import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 /**
  * Created by azadi on 3/29/15.
@@ -14,6 +20,7 @@ import android.widget.TextView;
 public class FoodListAdapter extends ArrayAdapter<FoodItem> {
     // declaring our ArrayList of items
     private ArrayList<FoodItem> objects;
+    Context context;
 
     /* here we must override the constructor for ArrayAdapter
     * the only variable we care about now is ArrayList<Item> objects,
@@ -22,6 +29,7 @@ public class FoodListAdapter extends ArrayAdapter<FoodItem> {
     public FoodListAdapter(Context context, int textViewResourceId, ArrayList<FoodItem> objects) {
         super(context, textViewResourceId, objects);
         this.objects = objects;
+        this.context = context;
     }
 
     /*
@@ -42,29 +50,33 @@ public class FoodListAdapter extends ArrayAdapter<FoodItem> {
 
         FoodItem item = objects.get(position);
 
-        ViewHolder viewHolder = new ViewHolder();
+        final ViewHolder viewHolder = new ViewHolder();
+        viewHolder.mainLayout = (LinearLayout) v.findViewById(R.id.mainLayout);
+        viewHolder.mainLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(context, "Clicked item", Toast.LENGTH_SHORT).show();
+                String[] calories = ((viewHolder.calories.getText().toString()).replaceAll("[^0-9.]+", " ").trim()).split(" ");
+                //SQLiteDatabase mydatabase = openOrCreateDatabase("MainDB",MODE_PRIVATE,null);
+                //Cursor resultSet = mydatabase.rawQuery("SELECT * FROM CalorieAnnihilator WHERE Username='azadi'",null);
+                //resultSet.moveToFirst();
+                //if (resultSet.getCount() > 0)
+                //  mydatabase.execSQL("UPDATE CalorieAnnihilator SET Calories=" + calories + ", Sugar=0.0 WHERE Username='azadi");
+            }
+        });
         viewHolder.name = (TextView) v.findViewById(R.id.name);
-        viewHolder.name.setText(viewHolder.name.getText() + item.name);
+        viewHolder.name.setText("Name: " + item.name);
         viewHolder.servingSize = (TextView) v.findViewById(R.id.servingSize);
-        viewHolder.servingSize.setText(viewHolder.servingSize.getText() + item.servingSize);
+        viewHolder.servingSize.setText("Serving Size: " + item.servingSize);
         viewHolder.calories = (TextView) v.findViewById(R.id.calories);
-        viewHolder.calories.setText(viewHolder.calories.getText() + item.calories);
-
-		/*
-		 * Recall that the variable position is sent in as an argument to this method.
-		 * The variable simply refers to the position of the current object in the list. (The ArrayAdapter
-		 * iterates through the list we sent it)
-		 *
-		 * Therefore, i refers to the current Item object.
-		 */
-        FoodItem i = objects.get(position);
+        viewHolder.calories.setText("Calories: " + item.calories);
 
         return v;
-
     }
 
     static class ViewHolder
     {
+        LinearLayout mainLayout;
         TextView name, calories, servingSize;
     }
 }

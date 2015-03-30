@@ -3,7 +3,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical" >
 
     <TextView
         android:id="@+id/textView"
@@ -22,11 +22,15 @@
         android:layout_margin="10dp"
         android:background="@color/black" />
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
     <ListView
         android:id="@+id/listView"
         android:layout_width="match_parent"
-        android:layout_height="397dp"
-        android:layout_gravity="center_horizontal" />
+        android:layout_height="500dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_above="@+id/searchBtn"/>
 
     <Button
         android:id="@+id/searchBtn"
@@ -34,8 +38,11 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:background="@color/button_background"
+        android:layout_marginTop="10dp"
         android:padding="15dp"
         android:text="@string/searchDB"
-        android:textColor="@color/white" />
-
+        android:textColor="@color/white"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"/>
+    </RelativeLayout>
 </LinearLayout>
