@@ -54,7 +54,7 @@ public class DataSource
     public void deleteEntry(Calories comment)
     {
         long id = comment.getId();
-        System.out.println("Comment deleted with id: " + id);
+        System.out.println("Deleted id: " + id);
         database.delete(SQLiteHelper.TABLE_CALORIE_ANNIHILATOR, SQLiteHelper.COLUMN_ID
                 + " = " + id, null);
     }

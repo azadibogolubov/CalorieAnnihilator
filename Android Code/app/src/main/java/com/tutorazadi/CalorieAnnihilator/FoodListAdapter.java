@@ -2,7 +2,6 @@ package com.tutorazadi.CalorieAnnihilator;
 
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import java.util.ArrayList;
 import android.content.Context;
@@ -10,7 +9,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.LayoutInflater;
 import android.widget.LinearLayout;
-import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -57,11 +55,11 @@ public class FoodListAdapter extends ArrayAdapter<FoodItem> {
             public void onClick(View v) {
                 Toast.makeText(context, "Clicked item", Toast.LENGTH_SHORT).show();
                 String[] calories = ((viewHolder.calories.getText().toString()).replaceAll("[^0-9.]+", " ").trim()).split(" ");
-                //SQLiteDatabase mydatabase = openOrCreateDatabase("MainDB",MODE_PRIVATE,null);
-                //Cursor resultSet = mydatabase.rawQuery("SELECT * FROM CalorieAnnihilator WHERE Username='azadi'",null);
-                //resultSet.moveToFirst();
-                //if (resultSet.getCount() > 0)
-                //  mydatabase.execSQL("UPDATE CalorieAnnihilator SET Calories=" + calories + ", Sugar=0.0 WHERE Username='azadi");
+                SQLiteDatabase mydatabase = context.openOrCreateDatabase("MainDB.db", Context.MODE_PRIVATE, null);
+                Cursor resultSet = mydatabase.rawQuery("SELECT * FROM CalorieAnnihilator",null);
+                resultSet.moveToFirst();
+                if (resultSet.getCount() > 0)
+                  mydatabase.execSQL("UPDATE CalorieAnnihilator SET Calories=" + calories);
             }
         });
         viewHolder.name = (TextView) v.findViewById(R.id.name);
