@@ -21,20 +21,17 @@ import java.io.InputStreamReader;
 import java.util.*;
 
 public class BingeActivity extends Activity {
-    private static String url;
     private ListView listView;
     private FoodListAdapter adapter;
     private EditText searchTxt;
     private ArrayList<FoodItem> listItems;
+    private String foodName;
 
     @Override
     public void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_avoidance);
-
-        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
-        StrictMode.setThreadPolicy(policy);
+        setContentView(R.layout.activity_binge);
 
         listItems = new ArrayList<>();
         adapter = new FoodListAdapter(this, R.layout.food_item, listItems);
@@ -49,11 +46,30 @@ public class BingeActivity extends Activity {
             @Override
             public void onClick(View v)
             {
-                final String foodName = searchTxt.getText().toString();
-                listItems.addAll(new JSONOperations().getResults(foodName));
-                adapter.notifyDataSetChanged();
+                foodName = searchTxt.getText().toString();
+                new FetchJSONResults().execute();
             }
         });
+    }
+
+    public class FetchJSONResults extends AsyncTask<Void, Void, String>{
+
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+        }
+
+        @Override
+        protected String doInBackground(Void... params) {
+            listItems.addAll(new JSONOperations().getResults(foodName));
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(String result) {
+            super.onPostExecute(result);
+            adapter.notifyDataSetChanged();
+        }
     }
 }
 

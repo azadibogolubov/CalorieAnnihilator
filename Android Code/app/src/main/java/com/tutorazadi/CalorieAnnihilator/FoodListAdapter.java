@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.LayoutInflater;
 import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -54,6 +55,7 @@ public class FoodListAdapter extends ArrayAdapter<FoodItem> {
         FoodItem item = objects.get(position);
 
         final ViewHolder viewHolder = new ViewHolder();
+
         viewHolder.mainLayout = (LinearLayout) v.findViewById(R.id.mainLayout);
         viewHolder.mainLayout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -72,6 +74,7 @@ public class FoodListAdapter extends ArrayAdapter<FoodItem> {
         viewHolder.servingSize.setText("Serving Size: " + item.servingSize);
         viewHolder.calories = (TextView) v.findViewById(R.id.calories);
         viewHolder.calories.setText("Calories: " + item.calories);
+
 
         return v;
     }
