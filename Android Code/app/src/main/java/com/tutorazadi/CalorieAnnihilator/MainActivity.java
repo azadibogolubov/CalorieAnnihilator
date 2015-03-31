@@ -9,6 +9,8 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.Cursor;
 import android.graphics.Typeface;
 
+import java.util.List;
+
 public class MainActivity extends Activity {
     /**
      * Called when the activity is first created.
@@ -17,8 +19,9 @@ public class MainActivity extends Activity {
     Button avoidanceBtn, bingeBtn;
     TextView caloriesAvoided, lbsOfSugarAvoided, welcome, pleaseChoose;
     String username;
-    float calories, sugar;
+    float calories = 0.0f, sugar;
     SQLiteDatabase mydatabase;
+    private DataSource datasource;
     Cursor resultSet;
     Typeface arimo, arimoItalic;
 
@@ -30,17 +33,12 @@ public class MainActivity extends Activity {
         arimo = Typeface.createFromAsset(getAssets(), "fonts/Arimo-Regular.ttf");;
         arimoItalic = Typeface.createFromAsset(getAssets(), "fonts/Arimo-Italic.ttf");;
 
-        mydatabase = openOrCreateDatabase("MainDB",MODE_PRIVATE,null);
-        mydatabase.execSQL("CREATE TABLE IF NOT EXISTS CalorieAnnihilator(Username VARCHAR, Calories DECIMAL(10,2), Sugar DECIMAL(10, 2));");
+        datasource = new DataSource(this);
+        datasource.open();
 
-        resultSet = mydatabase.rawQuery("SELECT * FROM CalorieAnnihilator",null);
-        resultSet.moveToFirst();
-
-        if (resultSet.getCount() > 0)
-        {
-            username = resultSet.getString(0);
-            calories = resultSet.getFloat(1);
-            sugar = resultSet.getFloat(2);
+        List<Calories> entries = datasource.getAllEntries();
+        for (Calories c: entries) {
+            calories += c.getCalories();
         }
 
         welcome = (TextView) findViewById(R.id.welcome);
@@ -56,6 +54,7 @@ public class MainActivity extends Activity {
         lbsOfSugarAvoided = (TextView) findViewById(R.id.lbsOfSugarAvoided);
         lbsOfSugarAvoided.setText("Lbs of sugar avoided: " + sugar);
         lbsOfSugarAvoided.setTypeface(arimo);
+        lbsOfSugarAvoided.setVisibility(View.INVISIBLE);
 
         avoidanceBtn = (Button) findViewById(R.id.avoidanceBtn);
         avoidanceBtn.setTypeface(arimoItalic);
@@ -86,20 +85,18 @@ public class MainActivity extends Activity {
     public void onResume()
     {
         super.onResume();
-        mydatabase = openOrCreateDatabase("MainDB",MODE_PRIVATE,null);
-        resultSet = mydatabase.rawQuery("SELECT * FROM CalorieAnnihilator",null);
-        resultSet.moveToFirst();
+        calories = 0.0f;
 
-        if (resultSet.getCount() > 0)
-        {
-            username = resultSet.getString(0);
-            calories = resultSet.getFloat(1);
-            sugar = resultSet.getFloat(2);
+        datasource = new DataSource(this);
+        datasource.open();
+
+        List<Calories> entries = datasource.getAllEntries();
+        for (Calories c: entries) {
+            calories += c.getCalories();
         }
+
         caloriesAvoided = (TextView) findViewById(R.id.caloriesAvoided);
         caloriesAvoided.setText("Calories avoided: " + calories);
-
-        lbsOfSugarAvoided = (TextView) findViewById(R.id.lbsOfSugarAvoided);
-        lbsOfSugarAvoided.setText("Lbs of sugar avoided: " + sugar);
+        caloriesAvoided.setTypeface(arimo);
     }
 }

@@ -37,7 +37,7 @@ public class AvoidanceActivity extends Activity {
         StrictMode.setThreadPolicy(policy);
 
         listItems = new ArrayList<>();
-        adapter = new FoodListAdapter(getApplicationContext(), R.layout.food_item, listItems);
+        adapter = new FoodListAdapter(this, R.layout.food_item, listItems);
 
         listView = (ListView) findViewById(R.id.listView);
         listView.setAdapter(adapter);
@@ -50,7 +50,6 @@ public class AvoidanceActivity extends Activity {
             public void onClick(View v)
             {
                 final String foodName = searchTxt.getText().toString();
-
                 listItems.addAll(new JSONOperations().getResults(foodName));
                 adapter.notifyDataSetChanged();
             }

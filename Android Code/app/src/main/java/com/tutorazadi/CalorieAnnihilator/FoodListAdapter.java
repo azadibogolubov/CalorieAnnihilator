@@ -1,5 +1,7 @@
 package com.tutorazadi.CalorieAnnihilator;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.widget.ArrayAdapter;
@@ -19,6 +21,7 @@ public class FoodListAdapter extends ArrayAdapter<FoodItem> {
     // declaring our ArrayList of items
     private ArrayList<FoodItem> objects;
     Context context;
+    DataSource datasource;
 
     /* here we must override the constructor for ArrayAdapter
     * the only variable we care about now is ArrayList<Item> objects,
@@ -28,6 +31,8 @@ public class FoodListAdapter extends ArrayAdapter<FoodItem> {
         super(context, textViewResourceId, objects);
         this.objects = objects;
         this.context = context;
+        datasource = new DataSource(context);
+        datasource.open();
     }
 
     /*
@@ -53,13 +58,12 @@ public class FoodListAdapter extends ArrayAdapter<FoodItem> {
         viewHolder.mainLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(context, "Clicked item", Toast.LENGTH_SHORT).show();
                 String[] calories = ((viewHolder.calories.getText().toString()).replaceAll("[^0-9.]+", " ").trim()).split(" ");
-                SQLiteDatabase mydatabase = context.openOrCreateDatabase("MainDB.db", Context.MODE_PRIVATE, null);
-                Cursor resultSet = mydatabase.rawQuery("SELECT * FROM CalorieAnnihilator",null);
-                resultSet.moveToFirst();
-                if (resultSet.getCount() > 0)
-                  mydatabase.execSQL("UPDATE CalorieAnnihilator SET Calories=" + calories);
+                if (context.toString().contains("Binge"))
+                    datasource.createEntry(-Float.parseFloat(calories[0]), 0.0f);
+                else if (context.toString().contains("Avoidance"))
+                    datasource.createEntry(Float.parseFloat(calories[0]), 0.0f);
+                ((Activity)getContext()).finish();
             }
         });
         viewHolder.name = (TextView) v.findViewById(R.id.name);
