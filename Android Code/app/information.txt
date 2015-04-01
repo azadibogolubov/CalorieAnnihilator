@@ -1,0 +1,4 @@
+Sugar is nutrient ID: 269
+Calories is nutrient ID: 208
+Can get NDB # from using q search query.
+Use NDBNO: to get Calories and Sugar

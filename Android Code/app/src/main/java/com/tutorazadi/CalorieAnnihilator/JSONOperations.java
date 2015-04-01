@@ -31,11 +31,12 @@ public class JSONOperations {
                 Object foodName = getName(parsedName, i);
                 Object ndbno = getNDB(parsedName, i);
 
-                Object parsedData = parser.parse(issueGetRequest("http://api.data.gov/usda/ndb/nutrients/?format=json&api_key=3hVnhFvj1VAagD29p9Q5b5MeYenARhmAvyX2suCf&nutrients=208&ndbno=" + ndbno + "&max=1"));
+                Object parsedData = parser.parse(issueGetRequest("http://api.data.gov/usda/ndb/nutrients/?format=json&api_key=3hVnhFvj1VAagD29p9Q5b5MeYenARhmAvyX2suCf&nutrients=208&nutrients=269&ndbno=" + ndbno + "&max=1"));
                 Object servingSize = getServingSize(parsedData, 0);
                 Object calories = getCalories(parsedData, 0);
+                Object sugar = getSugar(parsedData, 1);
 
-                results.add(new FoodItem(foodName.toString(), servingSize.toString(), calories.toString()));
+                results.add(new FoodItem(foodName.toString(), servingSize.toString(), calories.toString(), sugar.toString()));
             }
             catch (ParseException | IOException | IndexOutOfBoundsException e) {
                 if (e instanceof ParseException)
@@ -88,9 +89,19 @@ public class JSONOperations {
         Object foodsData = ((JSONObject) reportData).get("foods");
         Object foodsArray = ((JSONArray) foodsData).get(index);
         Object nutrientsData = ((JSONObject) foodsArray).get("nutrients");
-        Object nutrientsArray = ((JSONArray) nutrientsData).get(index);
-        Object value = ((JSONObject) nutrientsArray).get("value");
-        return value;
+        Object caloriesElement = ((JSONArray) nutrientsData).get(index);
+        Object caloriesValue = ((JSONObject) caloriesElement).get("value");
+        return caloriesValue;
+    }
+
+    public static Object getSugar(Object input, int index) {
+        Object reportData = ((JSONObject) input).get("report");
+        Object foodsData = ((JSONObject) reportData).get("foods");
+        Object foodsArray = ((JSONArray) foodsData).get(index);
+        Object nutrientsData = ((JSONObject) foodsArray).get("nutrients");
+        Object sugarElement = ((JSONArray) nutrientsData).get(index);
+        Object sugarValue = ((JSONObject) sugarElement).get("value");
+        return sugarValue;
     }
 
     public static Object getName(Object input, int index) {

@@ -15,7 +15,8 @@
         android:label="@string/app_name" >
         <activity
             android:name="com.tutorazadi.CalorieAnnihilator.MainActivity"
-            android:label="Welcome to Calorie Annihilator" >
+            android:icon="@drawable/ic_launcher"
+            android:label="Calorie Annihilator" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
