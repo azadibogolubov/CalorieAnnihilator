@@ -34,16 +34,16 @@ public class JSONOperations {
                 Object parsedData = parser.parse(issueGetRequest("http://api.data.gov/usda/ndb/nutrients/?format=json&api_key=3hVnhFvj1VAagD29p9Q5b5MeYenARhmAvyX2suCf&nutrients=208&nutrients=269&ndbno=" + ndbno + "&max=1"));
                 Object servingSize = getServingSize(parsedData, 0);
                 Object calories = getCalories(parsedData, 0);
-                Object sugar = getSugar(parsedData, 1);
+                //Object sugar = getSugar(parsedData, 1);
 
-                results.add(new FoodItem(foodName.toString(), servingSize.toString(), calories.toString(), sugar.toString()));
+                results.add(new FoodItem(foodName.toString(), servingSize.toString(), calories.toString(), "0.0"));
             }
             catch (ParseException | IOException | IndexOutOfBoundsException e) {
                 if (e instanceof ParseException)
                     System.out.println("Error parsing JSON");
                 else if (e instanceof IOException)
                     System.out.println("Error during GET request.");
-                else if (e instanceof IndexOutOfBoundsException)
+                else
                     break;
             }
         }
@@ -94,7 +94,7 @@ public class JSONOperations {
         return caloriesValue;
     }
 
-    public static Object getSugar(Object input, int index) {
+/*    public static Object getSugar(Object input, int index) {
         Object reportData = ((JSONObject) input).get("report");
         Object foodsData = ((JSONObject) reportData).get("foods");
         Object foodsArray = ((JSONArray) foodsData).get(index);
@@ -102,7 +102,7 @@ public class JSONOperations {
         Object sugarElement = ((JSONArray) nutrientsData).get(index);
         Object sugarValue = ((JSONObject) sugarElement).get("value");
         return sugarValue;
-    }
+    }*/
 
     public static Object getName(Object input, int index) {
         Object listData = ((JSONObject) input).get("list");

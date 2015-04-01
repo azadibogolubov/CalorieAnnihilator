@@ -1,6 +1,7 @@
 package com.tutorazadi.CalorieAnnihilator;
 
 import android.app.Activity;
+import android.app.Dialog;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -10,6 +11,8 @@ import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.LayoutInflater;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -23,6 +26,8 @@ public class FoodListAdapter extends ArrayAdapter<FoodItem> {
     private ArrayList<FoodItem> objects;
     Context context;
     DataSource datasource;
+    float quantity;
+    String[] calories;
 
     /* here we must override the constructor for ArrayAdapter
     * the only variable we care about now is ArrayList<Item> objects,
@@ -60,12 +65,42 @@ public class FoodListAdapter extends ArrayAdapter<FoodItem> {
         viewHolder.mainLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String[] calories = ((viewHolder.calories.getText().toString()).replaceAll("[^0-9.]+", " ").trim()).split(" ");
-                if (context.toString().contains("Binge"))
-                    datasource.createEntry(-Float.parseFloat(calories[0]), 0.0f);
-                else if (context.toString().contains("Avoidance"))
-                    datasource.createEntry(Float.parseFloat(calories[0]), 0.0f);
-                ((Activity)getContext()).finish();
+                calories = ((viewHolder.calories.getText().toString()).replaceAll("[^0-9.]+", " ").trim()).split(" ");
+
+
+                final Dialog dialog = new Dialog(context);
+
+
+                dialog.setContentView(R.layout.dialog_quantity);
+                dialog.setTitle("Enter quantity");
+
+                final EditText quantityTxt = (EditText) dialog.findViewById(R.id.quantityTxt);
+
+                Button confirmBtn, cancelBtn;
+                confirmBtn = (Button) dialog.findViewById(R.id.confirmBtn);
+                confirmBtn.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        float quantity = Float.parseFloat(quantityTxt.getText().toString());
+                        if (context.toString().contains("Binge"))
+                            datasource.createEntry(-quantity * Float.parseFloat(calories[0]), 0.0f);
+                        else if (context.toString().contains("Avoidance"))
+                            datasource.createEntry(quantity * Float.parseFloat(calories[0]), 0.0f);
+                        ((Activity)getContext()).finish();
+                        dialog.dismiss();
+                    }
+                });
+
+                cancelBtn = (Button) dialog.findViewById(R.id.cancelBtn);
+                cancelBtn.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        dialog.dismiss();
+                    }
+                });
+
+                dialog.show();
+
             }
         });
         viewHolder.name = (TextView) v.findViewById(R.id.name);
