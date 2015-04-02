@@ -54,7 +54,7 @@ public class MainActivity extends Activity {
         lbsOfSugarAvoided = (TextView) findViewById(R.id.lbsOfSugarAvoided);
         lbsOfSugarAvoided.setText("Lbs of sugar avoided: " + sugar);
         lbsOfSugarAvoided.setTypeface(arimo);
-        lbsOfSugarAvoided.setVisibility(View.INVISIBLE);
+        //lbsOfSugarAvoided.setVisibility(View.INVISIBLE);
 
         avoidanceBtn = (Button) findViewById(R.id.avoidanceBtn);
         avoidanceBtn.setTypeface(arimoItalic);

@@ -25,9 +25,10 @@ public final class R {
         public static final int white=0x7f050008;
     }
     public static final class drawable {
-        public static final int ic_launcher=0x7f020000;
-        public static final int rounded_button_blue=0x7f020001;
-        public static final int rounded_button_red=0x7f020002;
+        public static final int gray_gradient=0x7f020000;
+        public static final int ic_launcher=0x7f020001;
+        public static final int rounded_button_blue=0x7f020002;
+        public static final int rounded_button_red=0x7f020003;
     }
     public static final class id {
         public static final int avoidanceBtn=0x7f070007;
