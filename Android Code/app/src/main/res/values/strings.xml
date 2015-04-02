@@ -14,4 +14,8 @@
     <string name="damage">How bad is the damage?</string>
     <string name="poison">State your poison:</string>
     <string name="hello">Hello</string>
+    <string name="title_activity_about">AboutActivity</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
 </resources>

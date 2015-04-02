@@ -40,9 +40,17 @@ public class JSONOperations {
             }
             catch (ParseException | IOException | IndexOutOfBoundsException e) {
                 if (e instanceof ParseException)
-                    System.out.println("Error parsing JSON");
+                {
+                    ArrayList<FoodItem> noItemFound = new ArrayList<>();
+                    noItemFound.add(new FoodItem("Network error", "", "", ""));
+                    return noItemFound;
+                }
                 else if (e instanceof IOException)
-                    System.out.println("Error during GET request.");
+                {
+                    ArrayList<FoodItem> noItemFound = new ArrayList<>();
+                    noItemFound.add(new FoodItem("No items found", "", "", ""));
+                    return noItemFound;
+                }
                 else
                     break;
             }

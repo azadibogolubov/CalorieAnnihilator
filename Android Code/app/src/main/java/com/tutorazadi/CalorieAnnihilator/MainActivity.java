@@ -16,7 +16,7 @@ public class MainActivity extends Activity {
      * Called when the activity is first created.
      */
 
-    Button avoidanceBtn, bingeBtn;
+    Button avoidanceBtn, bingeBtn, aboutBtn;
     TextView caloriesAvoided, lbsOfSugarAvoided, welcome, pleaseChoose;
     String username;
     float calories = 0.0f, sugar;
@@ -79,6 +79,17 @@ public class MainActivity extends Activity {
                 MainActivity.this.startActivity(binge);
             }
         });
+
+        aboutBtn = (Button) findViewById(R.id.aboutBtn);
+        aboutBtn.setTypeface(arimoItalic);
+        aboutBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent about = new Intent(MainActivity.this, AboutActivity.class);
+                MainActivity.this.startActivity(about);
+            }
+        });
+
     }
 
     @Override

@@ -1,10 +1,13 @@
 package com.tutorazadi.CalorieAnnihilator;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.Dialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.view.Window;
 import android.widget.ArrayAdapter;
 import java.util.ArrayList;
 import android.content.Context;
@@ -69,10 +72,10 @@ public class FoodListAdapter extends ArrayAdapter<FoodItem> {
 
 
                 final Dialog dialog = new Dialog(context);
-
+                dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+                dialog.getWindow().setBackgroundDrawableResource(R.drawable.gray_gradient);
 
                 dialog.setContentView(R.layout.dialog_quantity);
-                dialog.setTitle("Enter quantity");
 
                 final EditText quantityTxt = (EditText) dialog.findViewById(R.id.quantityTxt);
 
@@ -110,6 +113,34 @@ public class FoodListAdapter extends ArrayAdapter<FoodItem> {
         viewHolder.calories = (TextView) v.findViewById(R.id.calories);
         viewHolder.calories.setText("Calories: " + item.calories);
 
+        if (item.name.equals("No items found"))
+        {
+            viewHolder.name.setVisibility(View.GONE);
+            viewHolder.servingSize.setVisibility(View.GONE);
+            viewHolder.calories.setVisibility(View.GONE);
+            new AlertDialog.Builder(context)
+                    .setMessage("No matching entries. Are you sure you spelled it correctly?")
+                    .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int which) {
+                        }
+                    })
+                    .setIcon(android.R.drawable.ic_dialog_alert)
+                    .show();
+        }
+        else if (item.name.equals("Network error"))
+        {
+            viewHolder.name.setVisibility(View.GONE);
+            viewHolder.servingSize.setVisibility(View.GONE);
+            viewHolder.calories.setVisibility(View.GONE);
+            new AlertDialog.Builder(context)
+                    .setMessage("Network error. Please try again later.")
+                    .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int which) {
+                        }
+                    })
+                    .setIcon(android.R.drawable.ic_dialog_alert)
+                    .show();
+        }
 
         return v;
     }

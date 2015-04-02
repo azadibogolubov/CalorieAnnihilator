@@ -1,7 +1,11 @@
 package com.tutorazadi.CalorieAnnihilator;
 
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.content.DialogInterface;
 import android.os.AsyncTask;
 import android.os.Handler;
+import android.view.Window;
 import android.widget.*;
 import android.app.Activity;
 import android.os.Bundle;
@@ -14,7 +18,6 @@ public class AvoidanceActivity extends Activity {
     private FoodListAdapter adapter;
     private EditText searchTxt;
     private ArrayList<FoodItem> listItems;
-    private Handler handler;
     String foodName;
 
     @Override
@@ -30,13 +33,12 @@ public class AvoidanceActivity extends Activity {
 
         searchTxt = (EditText) findViewById(R.id.searchTxt);
 
-        handler = new Handler();
-
         Button searchBtn = (Button) findViewById(R.id.searchBtn);
         searchBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 foodName = searchTxt.getText().toString();
+                listItems.clear();
                 Toast.makeText(AvoidanceActivity.this, "Searching...This could take a moment.", Toast.LENGTH_SHORT).show();
                 new FetchJSONResults().execute();
             }
