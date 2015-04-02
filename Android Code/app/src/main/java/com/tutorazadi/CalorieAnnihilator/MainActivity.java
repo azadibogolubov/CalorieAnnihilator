@@ -19,7 +19,7 @@ public class MainActivity extends Activity {
     Button avoidanceBtn, bingeBtn, aboutBtn;
     TextView caloriesAvoided, lbsOfSugarAvoided, welcome, pleaseChoose;
     String username;
-    float calories = 0.0f, sugar;
+    float calories = 0.0f, sugar = 0.0f;
     SQLiteDatabase mydatabase;
     private DataSource datasource;
     Cursor resultSet;
@@ -104,10 +104,15 @@ public class MainActivity extends Activity {
         List<Calories> entries = datasource.getAllEntries();
         for (Calories c: entries) {
             calories += c.getCalories();
+            sugar += c.getSugar();
         }
 
         caloriesAvoided = (TextView) findViewById(R.id.caloriesAvoided);
         caloriesAvoided.setText("Calories avoided: " + calories);
         caloriesAvoided.setTypeface(arimo);
+
+        lbsOfSugarAvoided = (TextView) findViewById(R.id.lbsOfSugarAvoided);
+        lbsOfSugarAvoided.setText("Lbs of sugar avoided: " + sugar);
+        lbsOfSugarAvoided.setTypeface(arimo);
     }
 }

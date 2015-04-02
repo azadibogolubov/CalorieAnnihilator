@@ -33,10 +33,9 @@ public class JSONOperations {
 
                 Object parsedData = parser.parse(issueGetRequest("http://api.data.gov/usda/ndb/nutrients/?format=json&api_key=3hVnhFvj1VAagD29p9Q5b5MeYenARhmAvyX2suCf&nutrients=208&nutrients=269&ndbno=" + ndbno + "&max=1"));
                 Object servingSize = getServingSize(parsedData, 0);
-                Object calories = getCalories(parsedData, 0);
-                //Object sugar = getSugar(parsedData, 1);
+                Object[] result = getCalories(parsedData);
 
-                results.add(new FoodItem(foodName.toString(), servingSize.toString(), calories.toString(), "0.0"));
+                results.add(new FoodItem(foodName.toString(), servingSize.toString(), result[0].toString(), result[1].toString()));
             }
             catch (ParseException | IOException | IndexOutOfBoundsException e) {
                 if (e instanceof ParseException)
@@ -92,14 +91,19 @@ public class JSONOperations {
         return servingSize;
     }
 
-    public static Object getCalories(Object input, int index) {
+    public static Object[] getCalories(Object input) {
         Object reportData = ((JSONObject) input).get("report");
         Object foodsData = ((JSONObject) reportData).get("foods");
-        Object foodsArray = ((JSONArray) foodsData).get(index);
+        Object foodsArray = ((JSONArray) foodsData).get(0);
         Object nutrientsData = ((JSONObject) foodsArray).get("nutrients");
-        Object caloriesElement = ((JSONArray) nutrientsData).get(index);
+        Object caloriesElement = ((JSONArray) nutrientsData).get(1);
+        Object sugarElement = ((JSONArray) nutrientsData).get(0);
         Object caloriesValue = ((JSONObject) caloriesElement).get("value");
-        return caloriesValue;
+        Object sugarValue = ((JSONObject) sugarElement).get("value");
+        Object[] result = new Object[2];
+        result[0] = caloriesValue;
+        result[1] = sugarValue;
+        return result;
     }
 
 /*    public static Object getSugar(Object input, int index) {

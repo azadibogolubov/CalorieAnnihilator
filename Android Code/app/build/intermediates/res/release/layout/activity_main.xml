@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
+    android:background="@drawable/gray_gradient"
     android:orientation="vertical">
 
     <TextView
@@ -10,6 +11,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
         android:gravity="center"
+        android:textColor="@android:color/white"
         android:text="Welcome to Calorie Annihilator!"
         android:textSize="24dp" />
 
@@ -18,6 +20,7 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
+        android:textColor="@android:color/white"
         android:text="Please choose an option:"
         android:textSize="24dp" />
 
@@ -42,6 +45,15 @@
         android:text="Binge Mode"
         android:textSize="24dp" />
 
+    <Button
+        android:id="@+id/aboutBtn"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="@drawable/rounded_button_green"
+        android:text="About Calorie Annihilator"
+        android:textSize="24dp" />
+
     <View
         android:layout_width="wrap_content"
         android:layout_height="200dp" />
@@ -50,6 +62,7 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
+        android:textColor="@android:color/white"
         android:text="Calories Avoided: 0"
         android:textSize="24dp" />
 
@@ -58,7 +71,8 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
-        android:text="Lbs of sugar avoided: 0.00"
+        android:textColor="@android:color/white"
+        android:text="Lbs of sugar avoided: 0"
         android:textSize="24dp" />
 </LinearLayout>
 

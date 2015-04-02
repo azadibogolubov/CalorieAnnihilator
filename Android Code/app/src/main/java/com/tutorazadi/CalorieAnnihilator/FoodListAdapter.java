@@ -29,8 +29,8 @@ public class FoodListAdapter extends ArrayAdapter<FoodItem> {
     private ArrayList<FoodItem> objects;
     Context context;
     DataSource datasource;
-    float quantity;
     String[] calories;
+    String[] sugar;
 
     /* here we must override the constructor for ArrayAdapter
     * the only variable we care about now is ArrayList<Item> objects,
@@ -69,7 +69,7 @@ public class FoodListAdapter extends ArrayAdapter<FoodItem> {
             @Override
             public void onClick(View v) {
                 calories = ((viewHolder.calories.getText().toString()).replaceAll("[^0-9.]+", " ").trim()).split(" ");
-
+                sugar = ((viewHolder.sugar.getText().toString()).replaceAll("[^0-9.]+", " ").trim()).split(" ");
 
                 final Dialog dialog = new Dialog(context);
                 dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
@@ -86,9 +86,9 @@ public class FoodListAdapter extends ArrayAdapter<FoodItem> {
                     public void onClick(View v) {
                         float quantity = Float.parseFloat(quantityTxt.getText().toString());
                         if (context.toString().contains("Binge"))
-                            datasource.createEntry(-quantity * Float.parseFloat(calories[0]), 0.0f);
+                            datasource.createEntry(-quantity * Float.parseFloat(calories[0]), (-quantity * Float.parseFloat(sugar[0]) / 454.4f));
                         else if (context.toString().contains("Avoidance"))
-                            datasource.createEntry(quantity * Float.parseFloat(calories[0]), 0.0f);
+                            datasource.createEntry(quantity * Float.parseFloat(calories[0]), (quantity * Float.parseFloat(sugar[0]) / 454.4f));
                         ((Activity)getContext()).finish();
                         dialog.dismiss();
                     }
@@ -112,6 +112,8 @@ public class FoodListAdapter extends ArrayAdapter<FoodItem> {
         viewHolder.servingSize.setText("Serving Size: " + item.servingSize);
         viewHolder.calories = (TextView) v.findViewById(R.id.calories);
         viewHolder.calories.setText("Calories: " + item.calories);
+        viewHolder.sugar = (TextView) v.findViewById(R.id.sugar);
+        viewHolder.sugar.setText("Grams of sugar: " + item.sugar);
 
         if (item.name.equals("No items found"))
         {
@@ -148,6 +150,6 @@ public class FoodListAdapter extends ArrayAdapter<FoodItem> {
     static class ViewHolder
     {
         LinearLayout mainLayout;
-        TextView name, calories, servingSize;
+        TextView name, calories, servingSize, sugar;
     }
 }

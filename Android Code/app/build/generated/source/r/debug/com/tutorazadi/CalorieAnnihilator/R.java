@@ -40,7 +40,7 @@ public final class R {
     }
     public static final class id {
         public static final int aboutBtn=0x7f09000e;
-        public static final int action_settings=0x7f090019;
+        public static final int action_settings=0x7f09001a;
         public static final int avoidanceBtn=0x7f09000c;
         public static final int bingeBtn=0x7f09000d;
         public static final int calories=0x7f090018;
@@ -58,6 +58,7 @@ public final class R {
         public static final int searchBtn=0x7f090009;
         public static final int searchTxt=0x7f090007;
         public static final int servingSize=0x7f090017;
+        public static final int sugar=0x7f090019;
         public static final int textView=0x7f090006;
         public static final int textView2=0x7f090000;
         public static final int textView3=0x7f090001;

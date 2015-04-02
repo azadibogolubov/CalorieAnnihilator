@@ -4,12 +4,14 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:id="@+id/mainLayout">
+    android:id="@+id/mainLayout"
+    android:background="@android:color/transparent" >
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@android:color/white"
         android:text="Name:"
         android:id="@+id/name" />
 
@@ -17,6 +19,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@android:color/white"
         android:text="Serving Size:"
         android:id="@+id/servingSize" />
 
@@ -24,6 +27,16 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@android:color/white"
         android:text="Calories:"
         android:id="@+id/calories" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@android:color/white"
+        android:text="Grams of sugar:"
+        android:id="@+id/sugar" />
+
 </LinearLayout><!-- From: file:/Users/azadi/Documents/workspace/CalorieAnnihilator/Android%20Code/app/src/main/res/layout/food_item.xml -->
