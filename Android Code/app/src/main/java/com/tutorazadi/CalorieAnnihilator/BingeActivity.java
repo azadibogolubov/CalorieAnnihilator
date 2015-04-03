@@ -36,6 +36,8 @@ public class BingeActivity extends Activity {
             {
                 foodName = searchTxt.getText().toString();
                 Toast.makeText(BingeActivity.this, "Searching...This could take a moment.", Toast.LENGTH_SHORT).show();
+                listItems.clear();
+                adapter.notifyDataSetChanged();
                 new FetchJSONResults().execute();
             }
         });

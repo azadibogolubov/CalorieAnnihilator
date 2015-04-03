@@ -120,6 +120,7 @@ public class FoodListAdapter extends ArrayAdapter<FoodItem> {
             viewHolder.name.setVisibility(View.GONE);
             viewHolder.servingSize.setVisibility(View.GONE);
             viewHolder.calories.setVisibility(View.GONE);
+            viewHolder.sugar.setVisibility(View.GONE);
             new AlertDialog.Builder(context)
                     .setMessage("No matching entries. Are you sure you spelled it correctly?")
                     .setPositiveButton("OK", new DialogInterface.OnClickListener() {
@@ -134,6 +135,7 @@ public class FoodListAdapter extends ArrayAdapter<FoodItem> {
             viewHolder.name.setVisibility(View.GONE);
             viewHolder.servingSize.setVisibility(View.GONE);
             viewHolder.calories.setVisibility(View.GONE);
+            viewHolder.sugar.setVisibility(View.GONE);
             new AlertDialog.Builder(context)
                     .setMessage("Network error. Please try again later.")
                     .setPositiveButton("OK", new DialogInterface.OnClickListener() {

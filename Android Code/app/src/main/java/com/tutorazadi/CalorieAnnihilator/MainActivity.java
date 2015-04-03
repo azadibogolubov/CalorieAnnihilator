@@ -12,17 +12,11 @@ import android.graphics.Typeface;
 import java.util.List;
 
 public class MainActivity extends Activity {
-    /**
-     * Called when the activity is first created.
-     */
 
     Button avoidanceBtn, bingeBtn, aboutBtn;
     TextView caloriesAvoided, lbsOfSugarAvoided, welcome, pleaseChoose;
-    String username;
     float calories = 0.0f, sugar = 0.0f;
-    SQLiteDatabase mydatabase;
     private DataSource datasource;
-    Cursor resultSet;
     Typeface arimo, arimoItalic;
 
     @Override
@@ -39,6 +33,7 @@ public class MainActivity extends Activity {
         List<Calories> entries = datasource.getAllEntries();
         for (Calories c: entries) {
             calories += c.getCalories();
+            sugar += c.getSugar();
         }
 
         welcome = (TextView) findViewById(R.id.welcome);
@@ -54,7 +49,6 @@ public class MainActivity extends Activity {
         lbsOfSugarAvoided = (TextView) findViewById(R.id.lbsOfSugarAvoided);
         lbsOfSugarAvoided.setText("Lbs of sugar avoided: " + sugar);
         lbsOfSugarAvoided.setTypeface(arimo);
-        //lbsOfSugarAvoided.setVisibility(View.INVISIBLE);
 
         avoidanceBtn = (Button) findViewById(R.id.avoidanceBtn);
         avoidanceBtn.setTypeface(arimoItalic);
@@ -89,7 +83,6 @@ public class MainActivity extends Activity {
                 MainActivity.this.startActivity(about);
             }
         });
-
     }
 
     @Override
@@ -97,6 +90,7 @@ public class MainActivity extends Activity {
     {
         super.onResume();
         calories = 0.0f;
+        sugar = 0.0f;
 
         datasource = new DataSource(this);
         datasource.open();

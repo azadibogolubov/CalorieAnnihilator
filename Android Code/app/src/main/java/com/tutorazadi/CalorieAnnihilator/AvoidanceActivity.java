@@ -1,11 +1,6 @@
 package com.tutorazadi.CalorieAnnihilator;
 
-import android.app.AlertDialog;
-import android.app.Dialog;
-import android.content.DialogInterface;
 import android.os.AsyncTask;
-import android.os.Handler;
-import android.view.Window;
 import android.widget.*;
 import android.app.Activity;
 import android.os.Bundle;
@@ -39,6 +34,7 @@ public class AvoidanceActivity extends Activity {
             public void onClick(View v) {
                 foodName = searchTxt.getText().toString();
                 listItems.clear();
+                adapter.notifyDataSetChanged();
                 Toast.makeText(AvoidanceActivity.this, "Searching...This could take a moment.", Toast.LENGTH_SHORT).show();
                 new FetchJSONResults().execute();
             }

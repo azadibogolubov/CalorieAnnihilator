@@ -13,29 +13,29 @@
         android:gravity="center"
         android:textColor="@android:color/white"
         android:text="Welcome to Calorie Annihilator!"
-        android:textSize="20dp" />
+        android:textSize="24dp" />
 
     <TextView
         android:id="@+id/pleaseChoose"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="10dp"
         android:layout_below="@id/welcome"
         android:textColor="@android:color/white"
         android:text="Please choose an option:"
-        android:textSize="20dp" />
+        android:textSize="24dp" />
 
     <Button
         android:id="@+id/avoidanceBtn"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="70dp"
-        android:layout_marginLeft="30dp"
-        android:layout_marginRight="30dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginLeft="120dp"
+        android:layout_marginRight="120dp"
         android:background="@drawable/rounded_button_blue"
         android:text="Avoidance Mode"
-        android:textSize="20dp"
+        android:textSize="24dp"
         android:layout_below="@+id/welcome"
         android:layout_centerHorizontal="true" />
 
@@ -43,12 +43,12 @@
         android:id="@+id/bingeBtn"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:layout_marginLeft="30dp"
-        android:layout_marginRight="30dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="120dp"
+        android:layout_marginRight="120dp"
         android:background="@drawable/rounded_button_red"
         android:text="Binge Mode"
-        android:textSize="20dp"
+        android:textSize="24dp"
         android:layout_below="@+id/avoidanceBtn"
         android:layout_centerHorizontal="true" />
 
@@ -58,10 +58,10 @@
         android:layout_height="wrap_content"
         android:background="@drawable/rounded_button_green"
         android:text="About Calorie Annihilator"
-        android:textSize="20dp"
-        android:layout_marginLeft="30dp"
-        android:layout_marginRight="30dp"
-        android:layout_marginTop="15dp"
+        android:textSize="24dp"
+        android:layout_marginLeft="120dp"
+        android:layout_marginRight="120dp"
+        android:layout_marginTop="30dp"
         android:layout_below="@+id/bingeBtn" />
 
     <TextView
@@ -72,7 +72,7 @@
         android:textColor="@android:color/white"
         android:text="Calories Avoided: 0"
         android:layout_above="@+id/lbsOfSugarAvoided"
-        android:textSize="20dp"
+        android:textSize="24dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
@@ -82,7 +82,7 @@
         android:layout_height="wrap_content"
         android:textColor="@android:color/white"
         android:text="Lbs of sugar avoided: 0"
-        android:textSize="20dp"
+        android:textSize="24dp"
         android:layout_marginBottom="70dp"
         android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true" />

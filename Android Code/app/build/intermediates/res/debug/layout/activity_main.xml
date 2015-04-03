@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:background="@drawable/gray_gradient"
@@ -13,50 +13,57 @@
         android:gravity="center"
         android:textColor="@android:color/white"
         android:text="Welcome to Calorie Annihilator!"
-        android:textSize="24dp" />
+        android:textSize="20dp" />
 
     <TextView
         android:id="@+id/pleaseChoose"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
+        android:layout_marginTop="5dp"
+        android:layout_below="@id/welcome"
         android:textColor="@android:color/white"
         android:text="Please choose an option:"
-        android:textSize="24dp" />
+        android:textSize="20dp" />
 
     <Button
         android:id="@+id/avoidanceBtn"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginBottom="10dp"
+        android:layout_marginTop="70dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
         android:background="@drawable/rounded_button_blue"
         android:text="Avoidance Mode"
-        android:textSize="24dp" />
+        android:textSize="20dp"
+        android:layout_below="@+id/welcome"
+        android:layout_centerHorizontal="true" />
 
     <Button
         android:id="@+id/bingeBtn"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
         android:background="@drawable/rounded_button_red"
         android:text="Binge Mode"
-        android:textSize="24dp" />
+        android:textSize="20dp"
+        android:layout_below="@+id/avoidanceBtn"
+        android:layout_centerHorizontal="true" />
 
     <Button
         android:id="@+id/aboutBtn"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
         android:background="@drawable/rounded_button_green"
         android:text="About Calorie Annihilator"
-        android:textSize="24dp" />
+        android:textSize="20dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="15dp"
+        android:layout_below="@+id/bingeBtn" />
 
-    <View
-        android:layout_width="wrap_content"
-        android:layout_height="200dp" />
     <TextView
         android:id="@+id/caloriesAvoided"
         android:layout_width="fill_parent"
@@ -64,16 +71,21 @@
         android:gravity="center_horizontal"
         android:textColor="@android:color/white"
         android:text="Calories Avoided: 0"
-        android:textSize="24dp" />
+        android:layout_above="@+id/lbsOfSugarAvoided"
+        android:textSize="20dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <TextView
         android:id="@+id/lbsOfSugarAvoided"
-        android:layout_width="fill_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
         android:textColor="@android:color/white"
         android:text="Lbs of sugar avoided: 0"
-        android:textSize="24dp" />
-</LinearLayout>
+        android:textSize="20dp"
+        android:layout_marginBottom="70dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true" />
+</RelativeLayout>
 
 <!-- From: file:/Users/azadi/Documents/workspace/CalorieAnnihilator/Android%20Code/app/src/main/res/layout/activity_main.xml -->

@@ -13,8 +13,8 @@
         android:layout_height="wrap_content"
         android:text="Enter the quantity:"
         android:textColor="@android:color/white"
-        android:layout_margin="5dp"
-        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_margin="20dp"
+        android:textSize="20dp"
         android:layout_centerHorizontal="true"
         android:layout_gravity="center_horizontal" />
 
@@ -24,8 +24,9 @@
         android:id="@+id/quantityTxt"
         android:textColor="@android:color/black"
         android:background="@android:color/white"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
         android:layout_below="@id/message"
         android:layout_gravity="center_horizontal" />
 
