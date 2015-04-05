@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.tutorazadi.CalorieAnnihilator"
-    android:versionCode="5"
+    android:versionCode="6"
     android:versionName="1.0" >
 
     <uses-sdk
@@ -25,11 +25,6 @@
             android:name="com.tutorazadi.CalorieAnnihilator.MainActivity"
             android:icon="@drawable/ic_launcher"
             android:label="Calorie Annihilator" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name="com.tutorazadi.CalorieAnnihilator.AvoidanceActivity"
@@ -39,7 +34,16 @@
             android:label="Binge Mode" />
         <activity
             android:name="com.tutorazadi.CalorieAnnihilator.AboutActivity"
-            android:label="@string/title_activity_about" >
+            android:label="@string/about" >
+        </activity>
+        <activity
+            android:name="com.tutorazadi.CalorieAnnihilator.SplashScreenActivity"
+            android:label="@string/title_activity_splash_screen" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
     </application>
 

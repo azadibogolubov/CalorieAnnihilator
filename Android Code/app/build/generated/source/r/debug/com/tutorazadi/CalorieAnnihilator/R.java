@@ -37,6 +37,7 @@ public final class R {
         public static final int rounded_button_blue=0x7f020002;
         public static final int rounded_button_green=0x7f020003;
         public static final int rounded_button_red=0x7f020004;
+        public static final int splash=0x7f020005;
     }
     public static final class id {
         public static final int aboutBtn=0x7f09000e;
@@ -72,22 +73,29 @@ public final class R {
         public static final int activity_avoidance=0x7f030001;
         public static final int activity_binge=0x7f030002;
         public static final int activity_main=0x7f030003;
-        public static final int dialog_quantity=0x7f030004;
-        public static final int food_item=0x7f030005;
+        public static final int activity_splash_screen=0x7f030004;
+        public static final int dialog_quantity=0x7f030005;
+        public static final int food_item=0x7f030006;
     }
     public static final class menu {
         public static final int menu_about=0x7f080000;
+        public static final int menu_splash_screen=0x7f080001;
     }
     public static final class string {
-        public static final int action_settings=0x7f070000;
-        public static final int app_name=0x7f070001;
-        public static final int damage=0x7f070002;
-        public static final int food=0x7f070003;
-        public static final int foodName=0x7f070004;
-        public static final int hello=0x7f070005;
-        public static final int hello_world=0x7f070006;
-        public static final int poison=0x7f070007;
-        public static final int searchDB=0x7f070008;
-        public static final int title_activity_about=0x7f070009;
+        public static final int about=0x7f070000;
+        public static final int action_settings=0x7f070001;
+        public static final int app_name=0x7f070002;
+        public static final int createdBy=0x7f070003;
+        public static final int damage=0x7f070004;
+        public static final int food=0x7f070005;
+        public static final int foodData=0x7f070006;
+        public static final int foodName=0x7f070007;
+        public static final int graphicsDesigner=0x7f070008;
+        public static final int hello=0x7f070009;
+        public static final int hello_world=0x7f07000a;
+        public static final int poison=0x7f07000b;
+        public static final int searchDB=0x7f07000c;
+        public static final int title_activity_splash_screen=0x7f07000d;
+        public static final int website=0x7f07000e;
     }
 }
