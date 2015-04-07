@@ -92,10 +92,9 @@ public final class R {
         public static final int foodName=0x7f070007;
         public static final int graphicsDesigner=0x7f070008;
         public static final int hello=0x7f070009;
-        public static final int hello_world=0x7f07000a;
-        public static final int poison=0x7f07000b;
-        public static final int searchDB=0x7f07000c;
-        public static final int title_activity_splash_screen=0x7f07000d;
-        public static final int website=0x7f07000e;
+        public static final int poison=0x7f07000a;
+        public static final int searchDB=0x7f07000b;
+        public static final int title_activity_splash_screen=0x7f07000c;
+        public static final int website=0x7f07000d;
     }
 }
