@@ -53,6 +53,18 @@
         android:layout_centerHorizontal="true" />
 
     <Button
+        android:id="@+id/exerciseBtn"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_button_orange"
+        android:text="Log Exercise Event"
+        android:textSize="20dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="15dp"
+        android:layout_below="@+id/bingeBtn" />
+
+    <Button
         android:id="@+id/aboutBtn"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
@@ -62,7 +74,7 @@
         android:layout_marginLeft="30dp"
         android:layout_marginRight="30dp"
         android:layout_marginTop="15dp"
-        android:layout_below="@+id/bingeBtn" />
+        android:layout_below="@+id/exerciseBtn" />
 
     <TextView
         android:id="@+id/caloriesAvoided"
@@ -70,7 +82,9 @@
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
         android:textColor="@android:color/white"
+        android:layout_marginTop="20dp"
         android:text="Calories Avoided: 0"
+        android:layout_below="@id/aboutBtn"
         android:layout_above="@+id/lbsOfSugarAvoided"
         android:textSize="20dp"
         android:layout_alignParentLeft="true"
