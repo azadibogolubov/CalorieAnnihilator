@@ -13,7 +13,7 @@ import java.util.List;
 
 public class MainActivity extends Activity {
 
-    Button avoidanceBtn, bingeBtn, aboutBtn;
+    Button avoidanceBtn, bingeBtn, aboutBtn, exerciseBtn;
     TextView caloriesAvoided, lbsOfSugarAvoided, welcome, pleaseChoose;
     float calories = 0.0f, sugar = 0.0f;
     private DataSource datasource;
@@ -57,7 +57,7 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View v) {
                 Intent avoidance = new Intent(MainActivity.this, AvoidanceActivity.class);
-                MainActivity.this.startActivity(avoidance);
+                startActivity(avoidance);
             }
         });
 
@@ -70,7 +70,7 @@ public class MainActivity extends Activity {
                 lbsOfSugarAvoided = (TextView) findViewById(R.id.lbsOfSugarAvoided);
 
                 Intent binge = new Intent(MainActivity.this, BingeActivity.class);
-                MainActivity.this.startActivity(binge);
+                startActivity(binge);
             }
         });
 
@@ -80,7 +80,16 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View v) {
                 Intent about = new Intent(MainActivity.this, AboutActivity.class);
-                MainActivity.this.startActivity(about);
+                startActivity(about);
+            }
+        });
+
+        exerciseBtn = (Button) findViewById(R.id.exerciseBtn);
+        exerciseBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent exercise = new Intent(MainActivity.this, ExerciseActivity.class);
+                startActivity(exercise);
             }
         });
     }
