@@ -85,10 +85,16 @@ ADDED from AndroidManifest.xml:40:13
 action#android.intent.action.MAIN
 ADDED from AndroidManifest.xml:41:17
 	android:label
-		ADDED from AndroidManifest.xml:41:67
+		ADDED from AndroidManifest.xml:43:21
 	android:name
-		ADDED from AndroidManifest.xml:41:25
+		ADDED from AndroidManifest.xml:42:21
 category#android.intent.category.LAUNCHER
-ADDED from AndroidManifest.xml:43:17
+ADDED from AndroidManifest.xml:45:17
 	android:name
-		ADDED from AndroidManifest.xml:43:27
+		ADDED from AndroidManifest.xml:45:27
+activity#com.tutorazadi.CalorieAnnihilator.ExerciseActivity
+ADDED from AndroidManifest.xml:48:9
+	android:label
+		ADDED from AndroidManifest.xml:50:13
+	android:name
+		ADDED from AndroidManifest.xml:49:13

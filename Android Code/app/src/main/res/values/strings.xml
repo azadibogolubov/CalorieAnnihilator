@@ -24,5 +24,14 @@
     <string name="title_activity_splash_screen">SplashScreenActivity</string>
     <string name="title_activity_exercise">Exercise Event</string>
 
-    <string name="hello_world">Hello world!</string>
+    <string name="exercise_name">Please enter the name of the exercise:</string>
+    <string name="search">Search</string>
+
+    <string name="avoidance">Avoidance Mode</string>
+    <string name="binge">Binge Mode</string>
+    <string name="log_exercise">Log Exercise Event</string>
+    <string name="welcome">Welcome to Calorie Annihilator!</string>
+    <string name="choose">Please choose an option:</string>
+    <string name="lbsAvoided">Lbs of sugar avoided: 0</string>
+    <string name="caloriesAvoided">Calories Avoided: 0</string>
 </resources>
