@@ -14,6 +14,7 @@
 		2236D9AA1AD215B300C0248A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2236D9A91AD215B300C0248A /* Images.xcassets */; };
 		2236D9AD1AD215B300C0248A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2236D9AB1AD215B300C0248A /* LaunchScreen.xib */; };
 		2236D9B91AD215B300C0248A /* CalorieAnnihilatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2236D9B81AD215B300C0248A /* CalorieAnnihilatorTests.swift */; };
+		22EC12381B65C09E001E73B4 /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22EC12371B65C09E001E73B4 /* Food.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		2236D9B21AD215B300C0248A /* CalorieAnnihilatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CalorieAnnihilatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2236D9B71AD215B300C0248A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2236D9B81AD215B300C0248A /* CalorieAnnihilatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalorieAnnihilatorTests.swift; sourceTree = "<group>"; };
+		22EC12371B65C09E001E73B4 /* Food.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Food.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 				2236D9AB1AD215B300C0248A /* LaunchScreen.xib */,
 				2236D9A11AD215B300C0248A /* CalorieAnnihilator.xcdatamodeld */,
 				2236D99D1AD215B300C0248A /* Supporting Files */,
+				22EC12371B65C09E001E73B4 /* Food.swift */,
 			);
 			path = CalorieAnnihilator;
 			sourceTree = "<group>";
@@ -216,6 +219,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2236D9A51AD215B300C0248A /* ViewController.swift in Sources */,
+				22EC12381B65C09E001E73B4 /* Food.swift in Sources */,
 				2236D9A01AD215B300C0248A /* AppDelegate.swift in Sources */,
 				2236D9A31AD215B300C0248A /* CalorieAnnihilator.xcdatamodeld in Sources */,
 			);
@@ -411,6 +415,7 @@
 				2236D9BE1AD215B300C0248A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2236D9BF1AD215B300C0248A /* Build configuration list for PBXNativeTarget "CalorieAnnihilatorTests" */ = {
 			isa = XCConfigurationList;
@@ -419,6 +424,7 @@
 				2236D9C11AD215B300C0248A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

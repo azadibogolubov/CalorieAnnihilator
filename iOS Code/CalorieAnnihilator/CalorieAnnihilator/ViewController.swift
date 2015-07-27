@@ -12,6 +12,7 @@ class ViewController: UIViewController {
 
     var nameTxt: String = ""
     var caloriesTxt: String = ""
+    var foodList = Food()
     
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var caloriesLabel: UILabel!
@@ -37,18 +38,22 @@ class ViewController: UIViewController {
                 if let foods = report["foods"] as? NSArray {
                     if let firstName = foods[0] as? NSDictionary {
                         if let name = firstName["name"] as? NSString {
-                            self.nameTxt = "Name: \(name)" as String
+                            let foodName = name as String
+                            self.foodList.name = "Name: \(foodName)"
                         }
                         if let nutrients = firstName["nutrients"] as? NSArray {
                             if let firstNutrientEntry = nutrients[0] as? NSDictionary {
-                                if let calories = firstNutrientEntry["value"] as? NSString {
-                                    self.caloriesTxt = "Calories: \(calories)" as String
+                                if let calories = firstNutrientEntry["value"] as? String {
+                                    self.foodList.calories = "Calories: \(calories)"
                                 }
                             }
                         }
                     }
                 }
             }
+            
+            self.nameTxt = self.foodList.name!
+            self.caloriesTxt = self.foodList.calories!
             
             if (err != nil) {
                 println("JSON Error \(err!.localizedDescription)")
