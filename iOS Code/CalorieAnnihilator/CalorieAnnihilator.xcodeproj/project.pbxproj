@@ -15,6 +15,7 @@
 		2236D9AD1AD215B300C0248A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2236D9AB1AD215B300C0248A /* LaunchScreen.xib */; };
 		2236D9B91AD215B300C0248A /* CalorieAnnihilatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2236D9B81AD215B300C0248A /* CalorieAnnihilatorTests.swift */; };
 		228FE7861B82E9F300F8C779 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228FE7851B82E9F300F8C779 /* WelcomeViewController.swift */; };
+		228FE7881B82F19500F8C779 /* BingeModeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228FE7871B82F19500F8C779 /* BingeModeViewController.swift */; };
 		22EC12381B65C09E001E73B4 /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22EC12371B65C09E001E73B4 /* Food.swift */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +42,7 @@
 		2236D9B71AD215B300C0248A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2236D9B81AD215B300C0248A /* CalorieAnnihilatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalorieAnnihilatorTests.swift; sourceTree = "<group>"; };
 		228FE7851B82E9F300F8C779 /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		228FE7871B82F19500F8C779 /* BingeModeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BingeModeViewController.swift; sourceTree = "<group>"; };
 		22EC12371B65C09E001E73B4 /* Food.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Food.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -92,6 +94,7 @@
 				2236D99D1AD215B300C0248A /* Supporting Files */,
 				22EC12371B65C09E001E73B4 /* Food.swift */,
 				228FE7851B82E9F300F8C779 /* WelcomeViewController.swift */,
+				228FE7871B82F19500F8C779 /* BingeModeViewController.swift */,
 			);
 			path = CalorieAnnihilator;
 			sourceTree = "<group>";
@@ -222,6 +225,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2236D9A51AD215B300C0248A /* ViewController.swift in Sources */,
+				228FE7881B82F19500F8C779 /* BingeModeViewController.swift in Sources */,
 				228FE7861B82E9F300F8C779 /* WelcomeViewController.swift in Sources */,
 				22EC12381B65C09E001E73B4 /* Food.swift in Sources */,
 				2236D9A01AD215B300C0248A /* AppDelegate.swift in Sources */,

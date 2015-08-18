@@ -1,5 +1,5 @@
 //
-//  WelcomeViewController.swift
+//  BingeModeViewController.swift
 //  CalorieAnnihilator
 //
 //  Created by Azadi on 8/17/15.
@@ -8,24 +8,20 @@
 
 import UIKit
 
-class WelcomeViewController: UIViewController {
+class BingeModeViewController: UIViewController {
 
-    @IBOutlet weak var avoidanceBtn: UIButton!
-    @IBOutlet weak var bingeBtn: UIButton!
-    @IBOutlet weak var aboutBtn: UIButton!
-    
+    @IBOutlet weak var damageBtn: UIButton!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         initButtons()
     }
-    
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
     func initButtons() {
-        avoidanceBtn.layer.cornerRadius = 10;
-        bingeBtn.layer.cornerRadius = 10;
-        aboutBtn.layer.cornerRadius = 10;
+        damageBtn.layer.cornerRadius = 10;
     }
 }
