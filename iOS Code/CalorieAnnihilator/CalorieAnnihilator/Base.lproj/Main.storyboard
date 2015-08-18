@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Gj4-ah-Jlm">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -44,6 +44,116 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+        </scene>
+        <!--Welcome View Controller-->
+        <scene sceneID="903-pO-x1w">
+            <objects>
+                <viewController id="Gj4-ah-Jlm" customClass="WelcomeViewController" customModule="CalorieAnnihilator" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="2pL-2X-nZV"/>
+                        <viewControllerLayoutGuide type="bottom" id="TAa-Vw-Kla"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="aDb-yY-Zvm">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to Calorie Annihilator!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iJM-3D-Ehz">
+                                <rect key="frame" x="182" y="28" width="241" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please choose an option:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qwr-DM-1o8">
+                                <rect key="frame" x="203" y="57" width="194" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Calories Avoided:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9lE-gA-nDG">
+                                <rect key="frame" x="233" y="512" width="135" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lbs of sugar avoided:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vkZ-Pn-P5p">
+                                <rect key="frame" x="217" y="550" width="167" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zo4-Xg-7gv">
+                                <rect key="frame" x="190" y="224" width="221" height="30"/>
+                                <color key="backgroundColor" red="0.98823529409999999" green="0.30980392159999998" blue="0.027450980390000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="cqf-jo-8BF"/>
+                                    <constraint firstAttribute="width" constant="221" id="qRv-dI-JWm"/>
+                                </constraints>
+                                <state key="normal" title="Binge Mode">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="159" y="180" width="83" height="30"/>
+                                </variation>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oQO-BL-2c9">
+                                <rect key="frame" x="190" y="271" width="221" height="30"/>
+                                <color key="backgroundColor" red="0.35087342923839504" green="0.56281565656565657" blue="0.42249209385323716" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="fY6-cW-QjQ"/>
+                                    <constraint firstAttribute="width" constant="221" id="rwf-KJ-VR3"/>
+                                </constraints>
+                                <state key="normal" title="About Calorie Annihilator">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="115" y="245" width="171" height="30"/>
+                                </variation>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WCZ-EW-fJY">
+                                <rect key="frame" x="190" y="170" width="221" height="30"/>
+                                <color key="backgroundColor" red="0.14509804549999999" green="0.1019607931" blue="0.94117653369999998" alpha="1" colorSpace="deviceRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Zx8-4d-fic"/>
+                                    <constraint firstAttribute="width" constant="221" id="yYB-iD-39I"/>
+                                </constraints>
+                                <state key="normal" title="Avoidance Mode">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="142" y="126" width="116" height="30"/>
+                                </variation>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="iJM-3D-Ehz" firstAttribute="top" secondItem="2pL-2X-nZV" secondAttribute="bottom" constant="8" id="023-46-ez7"/>
+                            <constraint firstAttribute="centerX" secondItem="vkZ-Pn-P5p" secondAttribute="centerX" constant="-0.5" id="7h7-kU-65Q"/>
+                            <constraint firstItem="oQO-BL-2c9" firstAttribute="top" secondItem="zo4-Xg-7gv" secondAttribute="bottom" constant="35" id="B2B-bm-YRo"/>
+                            <constraint firstItem="zo4-Xg-7gv" firstAttribute="top" secondItem="WCZ-EW-fJY" secondAttribute="bottom" constant="24" id="FMN-Ae-301"/>
+                            <constraint firstAttribute="centerX" secondItem="WCZ-EW-fJY" secondAttribute="centerX" id="Jdq-Te-fI3"/>
+                            <constraint firstAttribute="centerX" secondItem="oQO-BL-2c9" secondAttribute="centerX" constant="-0.5" id="LvL-nu-cGc"/>
+                            <constraint firstItem="vkZ-Pn-P5p" firstAttribute="top" secondItem="9lE-gA-nDG" secondAttribute="bottom" constant="17" id="Nmo-1i-H5G"/>
+                            <constraint firstAttribute="centerX" secondItem="zo4-Xg-7gv" secondAttribute="centerX" constant="-0.5" id="PuF-4a-uxF"/>
+                            <constraint firstItem="WCZ-EW-fJY" firstAttribute="top" secondItem="qwr-DM-1o8" secondAttribute="bottom" constant="90" id="Zj5-rB-gOf"/>
+                            <constraint firstAttribute="centerX" secondItem="iJM-3D-Ehz" secondAttribute="centerX" constant="-2.5" id="dTc-gD-N8T"/>
+                            <constraint firstAttribute="centerX" secondItem="9lE-gA-nDG" secondAttribute="centerX" constant="-0.5" id="eGy-dN-Ubr"/>
+                            <constraint firstItem="qwr-DM-1o8" firstAttribute="top" secondItem="iJM-3D-Ehz" secondAttribute="bottom" constant="8" id="g8t-MN-mg3"/>
+                            <constraint firstItem="TAa-Vw-Kla" firstAttribute="top" secondItem="vkZ-Pn-P5p" secondAttribute="bottom" constant="29" id="qwm-aC-4d5"/>
+                            <constraint firstAttribute="centerX" secondItem="qwr-DM-1o8" secondAttribute="centerX" id="wl4-RK-rGc"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="aboutBtn" destination="oQO-BL-2c9" id="8nG-Li-lfk"/>
+                        <outlet property="avoidanceBtn" destination="WCZ-EW-fJY" id="GrY-AT-gHl"/>
+                        <outlet property="bingeBtn" destination="zo4-Xg-7gv" id="N3H-yh-7f6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="D1Y-K5-Hvb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="380" y="989"/>
         </scene>
     </scenes>
 </document>
