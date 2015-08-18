@@ -16,6 +16,7 @@
 		2236D9B91AD215B300C0248A /* CalorieAnnihilatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2236D9B81AD215B300C0248A /* CalorieAnnihilatorTests.swift */; };
 		228FE7861B82E9F300F8C779 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228FE7851B82E9F300F8C779 /* WelcomeViewController.swift */; };
 		228FE7881B82F19500F8C779 /* BingeModeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228FE7871B82F19500F8C779 /* BingeModeViewController.swift */; };
+		228FE78A1B8300F100F8C779 /* AvoidanceModeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228FE7891B8300F100F8C779 /* AvoidanceModeViewController.swift */; };
 		22EC12381B65C09E001E73B4 /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22EC12371B65C09E001E73B4 /* Food.swift */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +44,7 @@
 		2236D9B81AD215B300C0248A /* CalorieAnnihilatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalorieAnnihilatorTests.swift; sourceTree = "<group>"; };
 		228FE7851B82E9F300F8C779 /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		228FE7871B82F19500F8C779 /* BingeModeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BingeModeViewController.swift; sourceTree = "<group>"; };
+		228FE7891B8300F100F8C779 /* AvoidanceModeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvoidanceModeViewController.swift; sourceTree = "<group>"; };
 		22EC12371B65C09E001E73B4 /* Food.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Food.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -95,6 +97,7 @@
 				22EC12371B65C09E001E73B4 /* Food.swift */,
 				228FE7851B82E9F300F8C779 /* WelcomeViewController.swift */,
 				228FE7871B82F19500F8C779 /* BingeModeViewController.swift */,
+				228FE7891B8300F100F8C779 /* AvoidanceModeViewController.swift */,
 			);
 			path = CalorieAnnihilator;
 			sourceTree = "<group>";
@@ -226,6 +229,7 @@
 			files = (
 				2236D9A51AD215B300C0248A /* ViewController.swift in Sources */,
 				228FE7881B82F19500F8C779 /* BingeModeViewController.swift in Sources */,
+				228FE78A1B8300F100F8C779 /* AvoidanceModeViewController.swift in Sources */,
 				228FE7861B82E9F300F8C779 /* WelcomeViewController.swift in Sources */,
 				22EC12381B65C09E001E73B4 /* Food.swift in Sources */,
 				2236D9A01AD215B300C0248A /* AppDelegate.swift in Sources */,
