@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		2236D9A01AD215B300C0248A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2236D99F1AD215B300C0248A /* AppDelegate.swift */; };
 		2236D9A31AD215B300C0248A /* CalorieAnnihilator.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2236D9A11AD215B300C0248A /* CalorieAnnihilator.xcdatamodeld */; };
-		2236D9A51AD215B300C0248A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2236D9A41AD215B300C0248A /* ViewController.swift */; };
 		2236D9A81AD215B300C0248A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2236D9A61AD215B300C0248A /* Main.storyboard */; };
 		2236D9AA1AD215B300C0248A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2236D9A91AD215B300C0248A /* Images.xcassets */; };
 		2236D9AD1AD215B300C0248A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2236D9AB1AD215B300C0248A /* LaunchScreen.xib */; };
@@ -17,6 +16,7 @@
 		228FE7861B82E9F300F8C779 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228FE7851B82E9F300F8C779 /* WelcomeViewController.swift */; };
 		228FE7881B82F19500F8C779 /* BingeModeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228FE7871B82F19500F8C779 /* BingeModeViewController.swift */; };
 		228FE78A1B8300F100F8C779 /* AvoidanceModeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228FE7891B8300F100F8C779 /* AvoidanceModeViewController.swift */; };
+		228FE78C1B85764D00F8C779 /* JSONQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228FE78B1B85764D00F8C779 /* JSONQuery.swift */; };
 		22EC12381B65C09E001E73B4 /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22EC12371B65C09E001E73B4 /* Food.swift */; };
 /* End PBXBuildFile section */
 
@@ -35,7 +35,6 @@
 		2236D99E1AD215B300C0248A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2236D99F1AD215B300C0248A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2236D9A21AD215B300C0248A /* CalorieAnnihilator.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CalorieAnnihilator.xcdatamodel; sourceTree = "<group>"; };
-		2236D9A41AD215B300C0248A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		2236D9A71AD215B300C0248A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2236D9A91AD215B300C0248A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		2236D9AC1AD215B300C0248A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -45,6 +44,7 @@
 		228FE7851B82E9F300F8C779 /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		228FE7871B82F19500F8C779 /* BingeModeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BingeModeViewController.swift; sourceTree = "<group>"; };
 		228FE7891B8300F100F8C779 /* AvoidanceModeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvoidanceModeViewController.swift; sourceTree = "<group>"; };
+		228FE78B1B85764D00F8C779 /* JSONQuery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONQuery.swift; sourceTree = "<group>"; };
 		22EC12371B65C09E001E73B4 /* Food.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Food.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -88,7 +88,6 @@
 			isa = PBXGroup;
 			children = (
 				2236D99F1AD215B300C0248A /* AppDelegate.swift */,
-				2236D9A41AD215B300C0248A /* ViewController.swift */,
 				2236D9A61AD215B300C0248A /* Main.storyboard */,
 				2236D9A91AD215B300C0248A /* Images.xcassets */,
 				2236D9AB1AD215B300C0248A /* LaunchScreen.xib */,
@@ -98,6 +97,7 @@
 				228FE7851B82E9F300F8C779 /* WelcomeViewController.swift */,
 				228FE7871B82F19500F8C779 /* BingeModeViewController.swift */,
 				228FE7891B8300F100F8C779 /* AvoidanceModeViewController.swift */,
+				228FE78B1B85764D00F8C779 /* JSONQuery.swift */,
 			);
 			path = CalorieAnnihilator;
 			sourceTree = "<group>";
@@ -227,8 +227,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2236D9A51AD215B300C0248A /* ViewController.swift in Sources */,
 				228FE7881B82F19500F8C779 /* BingeModeViewController.swift in Sources */,
+				228FE78C1B85764D00F8C779 /* JSONQuery.swift in Sources */,
 				228FE78A1B8300F100F8C779 /* AvoidanceModeViewController.swift in Sources */,
 				228FE7861B82E9F300F8C779 /* WelcomeViewController.swift in Sources */,
 				22EC12381B65C09E001E73B4 /* Food.swift in Sources */,

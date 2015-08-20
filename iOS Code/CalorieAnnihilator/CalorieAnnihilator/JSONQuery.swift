@@ -1,25 +1,15 @@
 //
-//  ViewController.swift
+//  JSONQuery.swift
 //  CalorieAnnihilator
 //
-//  Created by Azadi on 4/5/15.
+//  Created by Azadi on 8/19/15.
 //  Copyright (c) 2015 Tutor Azadi. All rights reserved.
 //
 
 import UIKit
 
-class ViewController: UIViewController {
-
-    var nameTxt: String = ""
-    var caloriesTxt: String = ""
-    var foodList = Food()
-    
-    @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var caloriesLabel: UILabel!
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
+class JSONQuery: NSObject {
+    class func queryFoodDatabase() {
         // The query to make to receive the JSON information from the USDA database.
         let url = NSURL(string: "http://api.data.gov/usda/ndb/nutrients/?format=json&api_key=3hVnhFvj1VAagD29p9Q5b5MeYenARhmAvyX2suCf&nutrients=208&ndbno=01218&max=1500")!
         let urlSession = NSURLSession.sharedSession()
@@ -39,12 +29,12 @@ class ViewController: UIViewController {
                     if let firstName = foods[0] as? NSDictionary {
                         if let name = firstName["name"] as? NSString {
                             let foodName = name as String
-                            self.foodList.name = "Name: \(foodName)"
+                            //self.foodList.name = "Name: \(foodName)"
                         }
                         if let nutrients = firstName["nutrients"] as? NSArray {
                             if let firstNutrientEntry = nutrients[0] as? NSDictionary {
                                 if let calories = firstNutrientEntry["value"] as? String {
-                                    self.foodList.calories = "Calories: \(calories)"
+                                    //self.foodList.calories = "Calories: \(calories)"
                                 }
                             }
                         }
@@ -52,23 +42,18 @@ class ViewController: UIViewController {
                 }
             }
             
-            self.nameTxt = self.foodList.name!
-            self.caloriesTxt = self.foodList.calories!
+            //self.nameTxt = self.foodList.name!
+            //self.caloriesTxt = self.foodList.calories!
             
             if (err != nil) {
                 println("JSON Error \(err!.localizedDescription)")
             }
             
             dispatch_async(dispatch_get_main_queue(), {
-                self.nameLabel.text = self.nameTxt
-                self.caloriesLabel.text = self.caloriesTxt
+                //self.nameLabel.text = self.nameTxt
+                //self.caloriesLabel.text = self.caloriesTxt
             })
         })
         jsonQuery.resume()
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
 }
-
