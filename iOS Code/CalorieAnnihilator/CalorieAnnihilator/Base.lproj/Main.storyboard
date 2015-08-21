@@ -16,18 +16,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1bb-B3-KUb">
-                                <rect key="frame" x="186" y="550" width="192" height="30"/>
-                                <color key="backgroundColor" red="0.1647058874" green="0.09803922474" blue="0.94901967050000002" alpha="1" colorSpace="deviceRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="192" id="GnU-rb-94n"/>
-                                    <constraint firstAttribute="height" constant="30" id="HZw-Sg-JP2"/>
-                                </constraints>
-                                <state key="normal" title="Search Database">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AV9-vi-BaZ">
                                 <rect key="frame" x="205" y="118" width="191" height="30"/>
                                 <constraints>
@@ -47,20 +35,35 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1bb-B3-KUb">
+                                <rect key="frame" x="204" y="550" width="192" height="30"/>
+                                <color key="backgroundColor" red="0.1647058874" green="0.09803922474" blue="0.94901967050000002" alpha="1" colorSpace="deviceRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="192" id="Aa4-vK-FhQ"/>
+                                    <constraint firstAttribute="height" constant="30" id="ywy-PK-IuQ"/>
+                                </constraints>
+                                <state key="normal" title="Search Database">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="saerchDatabaseClick:" destination="JlG-xE-4Ar" eventType="touchUpInside" id="HcJ-Gc-ZqA"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="PR7-mx-MDg" firstAttribute="top" secondItem="1Sb-ER-9ef" secondAttribute="bottom" constant="25" id="3a5-Zf-evM"/>
                             <constraint firstItem="AV9-vi-BaZ" firstAttribute="top" secondItem="PR7-mx-MDg" secondAttribute="bottom" constant="8" id="4ab-yD-TsP"/>
-                            <constraint firstItem="VdM-5H-76X" firstAttribute="top" secondItem="1bb-B3-KUb" secondAttribute="bottom" constant="20" id="624-Av-PkM"/>
                             <constraint firstAttribute="centerX" secondItem="PR7-mx-MDg" secondAttribute="centerX" id="JN0-AV-tzE"/>
+                            <constraint firstItem="VdM-5H-76X" firstAttribute="top" secondItem="1bb-B3-KUb" secondAttribute="bottom" constant="20" id="Sks-jR-fK0"/>
+                            <constraint firstAttribute="centerX" secondItem="1bb-B3-KUb" secondAttribute="centerX" id="cbu-Ks-F4q"/>
                             <constraint firstAttribute="centerX" secondItem="AV9-vi-BaZ" secondAttribute="centerX" constant="-0.5" id="p9S-lH-9Bm"/>
-                            <constraint firstAttribute="centerX" secondItem="1bb-B3-KUb" secondAttribute="centerX" id="tNN-PN-X2a"/>
-                            <constraint firstItem="VdM-5H-76X" firstAttribute="top" secondItem="1bb-B3-KUb" secondAttribute="bottom" constant="20" id="wy1-g2-ZbO"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="searchBtn" destination="1bb-B3-KUb" id="Lm8-Yl-qGo"/>
+                        <outlet property="searchDatabaseBtn" destination="1bb-B3-KUb" id="meM-zU-f98"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QoO-jC-1eH" userLabel="First Responder" sceneMemberID="firstResponder"/>

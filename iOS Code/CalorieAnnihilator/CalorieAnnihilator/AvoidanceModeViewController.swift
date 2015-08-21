@@ -10,6 +10,8 @@ import UIKit
 
 class AvoidanceModeViewController: UIViewController {
 
+    @IBOutlet weak var searchDatabaseBtn: UIButton!
+
     @IBOutlet weak var searchBtn: UIButton!
 
     override func viewDidLoad() {
@@ -23,5 +25,9 @@ class AvoidanceModeViewController: UIViewController {
     
     func initButtons() {
         searchBtn.layer.cornerRadius = 10
+    }
+    
+    @IBAction func saerchDatabaseClick(sender: AnyObject) {
+        JSONQuery.queryFoodDatabase()
     }
 }

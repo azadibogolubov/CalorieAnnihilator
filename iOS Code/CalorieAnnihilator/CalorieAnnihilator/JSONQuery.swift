@@ -30,11 +30,13 @@ class JSONQuery: NSObject {
                         if let name = firstName["name"] as? NSString {
                             let foodName = name as String
                             //self.foodList.name = "Name: \(foodName)"
+                            println("Food name: \(foodName)")
                         }
                         if let nutrients = firstName["nutrients"] as? NSArray {
                             if let firstNutrientEntry = nutrients[0] as? NSDictionary {
                                 if let calories = firstNutrientEntry["value"] as? String {
                                     //self.foodList.calories = "Calories: \(calories)"
+                                    println("Calories \(calories)")
                                 }
                             }
                         }
