@@ -24,4 +24,8 @@ class BingeModeViewController: UIViewController {
     func initButtons() {
         damageBtn.layer.cornerRadius = 10;
     }
+    
+    @IBAction func bingeClick(sender: AnyObject) {
+        JSONQuery.queryFoodDatabase()
+    }
 }
