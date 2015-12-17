@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">OrderTaker</string>
+
+    <string name="welcome">Welcome the order machine!</string>
+    <string name="meat">Meat: </string>
+    <string name="cheese">Cheese: </string>
+    <string name="condiments">Condiments: </string>
+    <string name="action_settings">Settings</string>
+    <string name="submit">Submit Order</string>
+    <string name="confirm_button">Confirm Order</string>
+    <string name="confirm">Please confirm your order:</string>
+
+    <string-array name="meats">
+        <item name="beef">Beef</item>
+        <item name="chicken">Chicken</item>
+        <item name="pork">Pork</item>
+    </string-array>
+
+    <string-array name="cheeses">
+        <item name="cheddar">Cheddar</item>
+        <item name="colby">Colby</item>
+        <item name="swiss">Swiss</item>
+    </string-array>
+
+    <string-array name="condiments">
+        <item name="pickles">Pickles</item>
+        <item name="olives">Olives</item>
+        <item name="lettuce">Lettuce</item>
+    </string-array>
+    <string name="title_activity_confirmation">ConfirmationActivity</string>
+
+</resources>

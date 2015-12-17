@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:background="@drawable/gray_gradient"
@@ -12,8 +12,8 @@
         android:layout_marginTop="30dp"
         android:gravity="center"
         android:textColor="@android:color/white"
-        android:text="Welcome to Calorie Annihilator!"
-        android:textSize="20dp" />
+        android:text="@string/welcome"
+        android:textSize="20sp" />
 
     <TextView
         android:id="@+id/pleaseChoose"
@@ -23,8 +23,8 @@
         android:layout_marginTop="5dp"
         android:layout_below="@id/welcome"
         android:textColor="@android:color/white"
-        android:text="Please choose an option:"
-        android:textSize="20dp" />
+        android:text="@string/choose"
+        android:textSize="20sp" />
 
     <Button
         android:id="@+id/avoidanceBtn"
@@ -34,8 +34,8 @@
         android:layout_marginLeft="30dp"
         android:layout_marginRight="30dp"
         android:background="@drawable/rounded_button_blue"
-        android:text="Avoidance Mode"
-        android:textSize="20dp"
+        android:text="@string/avoidance"
+        android:textSize="20sp"
         android:layout_below="@+id/welcome"
         android:layout_centerHorizontal="true" />
 
@@ -47,32 +47,51 @@
         android:layout_marginLeft="30dp"
         android:layout_marginRight="30dp"
         android:background="@drawable/rounded_button_red"
-        android:text="Binge Mode"
-        android:textSize="20dp"
+        android:text="@string/binge"
+        android:textSize="20sp"
         android:layout_below="@+id/avoidanceBtn"
         android:layout_centerHorizontal="true" />
+
+    <Button
+        android:id="@+id/exerciseBtn"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_button_orange"
+        android:text="@string/log_exercise"
+        android:textSize="20sp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="15dp"
+        android:layout_below="@+id/bingeBtn"
+        android:visibility="gone"/>
 
     <Button
         android:id="@+id/aboutBtn"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/rounded_button_green"
-        android:text="About Calorie Annihilator"
-        android:textSize="20dp"
+        android:text="@string/about"
+        android:textSize="20sp"
         android:layout_marginLeft="30dp"
         android:layout_marginRight="30dp"
         android:layout_marginTop="15dp"
-        android:layout_below="@+id/bingeBtn" />
+        android:layout_below="@+id/exerciseBtn" />
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:orientation="vertical" >
     <TextView
         android:id="@+id/caloriesAvoided"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
         android:textColor="@android:color/white"
-        android:text="Calories Avoided: 0"
+        android:text="@string/caloriesAvoided"
+        android:layout_below="@id/aboutBtn"
         android:layout_above="@+id/lbsOfSugarAvoided"
-        android:textSize="20dp"
+        android:textSize="20sp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
@@ -81,11 +100,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@android:color/white"
-        android:text="Lbs of sugar avoided: 0"
-        android:textSize="20dp"
-        android:layout_marginBottom="70dp"
-        android:layout_centerHorizontal="true"
-        android:layout_alignParentBottom="true" />
-</RelativeLayout>
+        android:text="@string/lbsAvoided"
+        android:textSize="20sp"
+        android:layout_gravity="center_horizontal"/>
+    </LinearLayout>
+</LinearLayout>
 
 <!-- From: file:/Users/azadi/Documents/workspace/CalorieAnnihilator/Android%20Code/app/src/main/res/layout/activity_main.xml -->

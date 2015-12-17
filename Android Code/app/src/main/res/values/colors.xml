@@ -11,9 +11,9 @@
     <item name="middle_red" type="color">#FF3333</item>
     <item name="pale_red" type="color">#EE7EC0</item>
 
-    <item name="green" type="color">#005B6D</item>
+    <item name="green" type="color">#00546D</item>
     <item name="middle_green" type="color">#006D6D</item>
-    <item name="pale_green" type="color">#006D5B</item>
+    <item name="pale_green" type="color">#006FBB</item>
 
     <item name="orange" type="color">#B25900</item>
     <item name="middle_orange" type="color">#D95C00</item>
