@@ -35,19 +35,22 @@ public class JSONOperations {
                 Object servingSize = getServingSize(parsedData, 0);
                 Object[] result = getCalories(parsedData);
 
-                results.add(new FoodItem(foodName.toString(), servingSize.toString(), result[0].toString(), result[1].toString()));
+                /** @todo
+                * Fix this so that it dynamically takes protein and fat content from DB.
+                */
+                results.add(new FoodItem(foodName.toString(), servingSize.toString(), result[0].toString(), "", "", result[1].toString()));
             }
             catch (ParseException | IOException | IndexOutOfBoundsException e) {
                 if (e instanceof ParseException)
                 {
                     ArrayList<FoodItem> noItemFound = new ArrayList<>();
-                    noItemFound.add(new FoodItem("Network error", "", "", ""));
+                    noItemFound.add(new FoodItem("Network error", "", "", "", "", ""));
                     return noItemFound;
                 }
                 else if (e instanceof IOException)
                 {
                     ArrayList<FoodItem> noItemFound = new ArrayList<>();
-                    noItemFound.add(new FoodItem("No items found", "", "", ""));
+                    noItemFound.add(new FoodItem("No items found", "", "", "", "", ""));
                     return noItemFound;
                 }
                 else

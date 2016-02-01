@@ -30,6 +30,8 @@ public class FoodListAdapter extends ArrayAdapter<FoodItem> {
     Context context;
     DataSource datasource;
     String[] calories;
+    String[] protein;
+    String[] fat;
     String[] sugar;
 
     /* here we must override the constructor for ArrayAdapter
@@ -69,6 +71,8 @@ public class FoodListAdapter extends ArrayAdapter<FoodItem> {
             @Override
             public void onClick(View v) {
                 calories = ((viewHolder.calories.getText().toString()).replaceAll("[^0-9.]+", " ").trim()).split(" ");
+                protein = ((viewHolder.protein.getText().toString()).replaceAll("[^0-9.]+", " ").trim()).split(" ");
+                fat = ((viewHolder.fat.getText().toString()).replaceAll("[^0-9.]+", " ").trim()).split(" ");
                 sugar = ((viewHolder.sugar.getText().toString()).replaceAll("[^0-9.]+", " ").trim()).split(" ");
 
                 final Dialog dialog = new Dialog(context);
@@ -112,6 +116,10 @@ public class FoodListAdapter extends ArrayAdapter<FoodItem> {
         viewHolder.servingSize.setText("Serving Size: " + item.servingSize);
         viewHolder.calories = (TextView) v.findViewById(R.id.calories);
         viewHolder.calories.setText("Calories: " + item.calories);
+        viewHolder.protein = (TextView) v.findViewById(R.id.protein);
+        viewHolder.protein.setText("Grams of protein: " + item.protein);
+        viewHolder.fat = (TextView) v.findViewById(R.id.fat);
+        viewHolder.fat.setText("Grams of fat: " + item.fat);
         viewHolder.sugar = (TextView) v.findViewById(R.id.sugar);
         viewHolder.sugar.setText("Grams of sugar: " + item.sugar);
 
@@ -152,6 +160,6 @@ public class FoodListAdapter extends ArrayAdapter<FoodItem> {
     static class ViewHolder
     {
         LinearLayout mainLayout;
-        TextView name, calories, servingSize, sugar;
+        TextView name, calories, servingSize, protein, fat, sugar;
     }
 }

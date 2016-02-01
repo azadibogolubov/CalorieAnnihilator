@@ -5,7 +5,7 @@ android {
 
     defaultConfig {
         applicationId "com.tutorazadi.CalorieAnnihilator"
-        minSdkVersion 14
+        minSdkVersion 17
         targetSdkVersion 19
     }
 
