@@ -31,7 +31,7 @@ public class JSONOperations {
                 Object foodName = getName(parsedName, i);
                 Object ndbno = getNDB(parsedName, i);
 
-                Object parsedData = parser.parse(issueGetRequest("http://api.data.gov/usda/ndb/nutrients/?format=json&api_key=3hVnhFvj1VAagD29p9Q5b5MeYenARhmAvyX2suCf&nutrients=208&nutrients=269&ndbno=" + ndbno + "&max=1"));
+                Object parsedData = parser.parse(issueGetRequest("http://api.data.gov/usda/ndb/nutrients/?format=json&api_key=3hVnhFvj1VAagD29p9Q5b5MeYenARhmAvyX2suCf&nutrients=208&nutrients=269&nutrients=203&nutrients=204&ndbno=" + ndbno + "&max=1"));
                 Object servingSize = getServingSize(parsedData, 0);
                 Object[] result = getCalories(parsedData);
 

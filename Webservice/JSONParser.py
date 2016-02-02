@@ -15,3 +15,5 @@ for i in range(0, 5):
 
 	print("Measure: " + calResponse["report"]["foods"][0]["measure"])
 	print("Calories: " + calResponse["report"]["foods"][0]["nutrients"][0]["value"] + '\n')
+
+
